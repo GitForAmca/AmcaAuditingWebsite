@@ -1,0 +1,184 @@
+﻿@model AMCAAuditing.Models.InsightModel
+@using CaptchaMvc.HtmlHelpers;
+@{
+    ViewBag.Controller = "InsightController";
+    ViewBag.Title = @Model.PageTitle;
+    ViewBag.PageTitle = @Model.PageTitle;
+    ViewBag.Keyword = @Model.Keyword;
+    ViewBag.Description = @Model.Description;
+    ViewBag.PageURL = "https://amcaauditing.com/" + @Model.pageUrlText;
+    ViewBag.ImageURL = @Model.ImageURL;
+    var imagePath = @Model.ImageURL;
+    var pageurl = "https://amcaauditing.com/" + @Model.pageUrlText;
+    var fbUrl = "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F" + @Model.pageUrlText + "&amp;src=sdkpreparse";
+    string ogImageUrl = @Model.ImageURL;
+}
+@section AdditionalMeta{
+    <meta property='og:title' content="@ViewBag.Title" />
+    <meta property='og:url' content="@ViewBag.PageURL" />
+    <meta property='og:type' content="website" />
+    <meta property='og:description' content="@ViewBag.Description" />
+    <meta property="og:image" content="@ogImageUrl" />
+    <meta property="fb:page_id" content="3058581424174487" />
+}
+
+<section>
+    <div class="row divider-banner">
+        <div class="container">
+            <div class="col-md-6">
+                <h1 class="h1Heading">
+                    @Model.BlogTitle
+                </h1>
+                <ul class="broudcrumb">
+                    <li>
+                        <a href="@Url.Action("Index", "Pages")">Home</a>
+                    </li>
+                    <li>
+                        Blogs
+                    </li>
+                    <li>
+                        @Model.BlogTitle
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bannerimg-bg"></div>
+    </div>
+</section>
+<section>
+    <div class="row padding-section blogs-wrapper">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            @using (Html.BeginForm("ServicesQuery", "Insight", FormMethod.Post, new { @class = "" }))
+
+
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control forminput-theme", @placeholder = "Company Name" })
+                                            @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control forminput-theme", @placeholder = "Full Name" })
+                                            @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control forminput-theme", @placeholder = "Email Id" })
+                                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control forminput-theme search-SelectList" })
+                                                    @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group">
+                                                    @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control forminput-theme restrictZero", @placeholder = "Contact No" })
+                                                    @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.Service, ViewBag.ServiceList as SelectList, "Select Services", new { @class = "form-control forminput-theme" })
+                                            @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Select Authority", new { @class = "form-control forminput-theme search-SelectList" })
+                                            @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control forminput-theme" })
+                                            @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group" id="captcha">
+                                            @Scripts.Render("~/bundles/jquery")
+                                            @Html.Captcha("Refresh", "", 5)
+                                            <p class="errorValidation">@ViewBag.ErrorMessage</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-right text-right Mtop-10">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <button class="btn btn-theme btn-color-1"> enquire now <i class="las la-long-arrow-alt-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            }
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img src="@Url.Content(Model.ImageURL)" class="img-responsive" title=@Model.pageUrlText alt=@Model.pageUrlText>
+                        </div>
+                    </div>
+                    <div class="row Mtop-20">
+                        <div class="col-md-12">
+                            @*<p>by <strong>@Model.CreatedBy</strong> @Model.CreatedOn</p>*@
+                            <p> @Model.CreatedOn</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @Html.Raw(@Model.BlogContent)
+                        </div>
+                    </div>
+
+                </div>
+                @RenderPage("~/Views/Sidebar/BlogsSidebar.cshtml", Model)
+            </div>
+        </div>
+    </div>
+</section>
+
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+    $(document).ready(function () {
+        window.addEventListener('popstate', function (event) {
+            location.reload();
+        }, false);
+        $(this).scrollTop(0);
+    })
+    $(window).on('unload', function () {
+        $(window).scrollTop(0);
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        debugger
+        history.pushState("", document.title, window.location.origin + "/@Model.pageUrlText");
+    })
+
+</script>
+

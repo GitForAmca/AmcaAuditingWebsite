@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "AuditAssuranceServices";
+}
+@model AMCAAuditing.Models.Validation
+@using CaptchaMvc.HtmlHelpers;
+@using (Html.BeginForm("ServicesQuery", "AuditAssuranceServices", FormMethod.Post, new { @class = "sub-services-form" }))
+
+{
+    <div class="col-md-12">
+        <div class="form-group">
+            @Html.HiddenFor(model => model.LeadDataType, new { Value = "Entity" })
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control forminput-theme", @placeholder = "Company Name" })
+                @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.ConcernPerson, new { @class = "form-control forminput-theme", @placeholder = "Full Name" })
+                @Html.ValidationMessageFor(model => model.ConcernPerson, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.EmailId, new { @class = "form-control forminput-theme", @placeholder = "Email Id" })
+                @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control forminput-theme search-SelectList" })
+                        @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control forminput-theme restrictZero", @placeholder = "Contact No" })
+                        @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "errorValidation" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        @*<div class="col-md-6">
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.Service, ViewBag.ServiceList as SelectList, "Select Services", new { @class = "form-control forminput-theme" })
+                @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+            </div>
+        </div>*@
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.SubServiceId, ViewBag.InternalAuditSubServices as SelectList, "Select Sub Services", new { @class = "form-control forminput-theme" })
+                @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Select Authority", new { @class = "form-control forminput-theme search-SelectList" })
+                @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.AboutAMCA, ViewBag.AboutAMCA as SelectList, "Where did you hear about AMCA?", new { @class = "form-control forminput-theme" })
+                @Html.ValidationMessageFor(model => model.AboutAMCA, "", new { @class = "errorValidation" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group" id="captcha">
+                @Scripts.Render("~/bundles/jquery")
+                @Html.Captcha("Refresh", "", 5)
+                <p class="text-danger">@ViewBag.ErrorMessage</p>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-right text-right Mtop-10">
+        <div class="col-md-12">
+            <div class="form-group">
+                <button class="btn btn-theme btn-color-1"> enquire now <i class="las la-long-arrow-alt-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($('#captcha p').text().length > 3) {
+            var target = document.getElementById("CaptchaInputText");
+            target.focus();
+        }
+    })
+</script>
+

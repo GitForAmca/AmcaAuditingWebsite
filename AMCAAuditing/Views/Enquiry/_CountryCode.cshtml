@@ -1,0 +1,8 @@
+﻿@model AMCAAuditing.Models.Validation
+<div class="form-group">
+    @Html.DropDownListFor(model => model.CountryCodeContact, new SelectList(ViewBag.CountryList, "value", "text", "+971"), "Code", new { @class = "form-control forminput-theme search-SelectList" })
+    @Html.ValidationMessageFor(model => model.CountryCodeContact, "", new { @class = "errorValidation" })
+</div>
+
+
+

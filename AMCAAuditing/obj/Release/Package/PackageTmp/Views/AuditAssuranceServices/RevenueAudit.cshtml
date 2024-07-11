@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "Revenue Audit | Revenue Audit Services in Dubai, UAE";
+    ViewBag.Keyword = "revenue audit, tax returns, business reports, income returns, audit, financial statements, tax records, company activities, declaration of liability, liability, tax obligations, tax, tax legislation, stamp duty, taxpayer, revenue, qualifying disclosure";
+    ViewBag.Description = "Revenue Audit Services in Dubai. A revenue audit is a method that looks at the statistics and details on the tax returns.";
+    ViewBag.PageTitle = "Revenue Audit Services in Dubai, UAE";
+    ViewBag.RevenueAudit = "ActiveSubLink";
+    ViewBag.ServiceActive = "active";
+    ViewBag.ogImageUrl = "https://amcaauditing.com/img/img1.svg";
+}
+
+
+<section class="banner-sec-top">
+    <div class="row breadcrumb-banner-sec">
+        <div class="col-md-6 broudcrumb-left">
+            <div class="broudcrumb-content">
+                <h1 class="h1Heading">@ViewBag.PageTitle</h1>
+                <ul class="broudcrumb">
+                    <li><a href="@Url.Action("Index", "Pages")">Home</a></li>
+                    <li>Services</li>
+                    <li>
+                        VAT Consulting
+                    </li>
+                    <li> Revenue Audit</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 broudcrumb-right">
+            <img src="~/img/services/revenue-audit.svg" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle" />
+        </div>
+    </div>
+</section>
+<section>
+    <div class="row padding-section">
+        <div class="container mobile-order">
+            @RenderPage("~/Views/Sidebar/AuditSidebar.cshtml")
+            <div class="col-md-8 order-1">
+                <div class="row">
+                    <div class="col-md-12">
+                        @RenderPage("~/Views/AuditAssuranceServices/EnquiryForm.cshtml")
+                    </div>
+                    <div class="col-md-12">
+
+                        <p>A revenue audit is a two-part method that looks at the statistics and details on the tax returns of a corporation against those found in its business reports. In general, auditors review the income returns over one year. They should, however, also check records for previous years if they find any inconsistencies.</p>
+                        <p>Regardless of the size of the business operations, most companies are subject to an audit. Auditors may concentrate on one or more fields, such as your financial statements, compliance, tax records, or company activities. For example, during a revenue audit, the tax returns of a corporation would be compared to its reports.</p>
+
+                        <h2>What is Revenue Audit? </h2>
+                        <p>The revenue audit consists of the review of the tax return, the inspection of the declaration of liability and the representation of liability in respect of the stamp duty, and the verification of the person's compliance with their obligations under the tax and duty legislation.</p>
+                        <p>In addition, during the revenue audit, the correct level of liability of the company is examined by investigating the books, records, and compliance of the organization with its tax obligations. Similarly, the auditor collects the sum of the taxpayer's unpaid taxes to place them on a proper tax enforcement basis.</p>
+                        <p class="Mtop-10"><strong><i>*NOTE: A single auditor may perform the Revenue Audit, or if the organization's size requires a team of Revenue auditors, then a team can work on the Revenue Audit of an organization.</i></strong></p>
+
+                        <h2>Revenues Audit Objectives</h2>
+                        <p>
+                            The primary objective of the Revenues Audit in the UAE is to ensure compliance with tax laws and regulations and identify any potential risks to the government's revenue base.
+                        </p>
+                        <ul>
+                            <li>Ensuring the accuracy of tax returns and compliance with tax laws and regulations.</li>
+                            <li>Verifying the completeness and accuracy of tax revenues collected by the government.</li>
+                            <li>Identifying potential risks to the government's revenue base and making recommendations to mitigate those risks.</li>
+                            <li>Assessing the effectiveness of the tax collection and enforcement processes.</li>
+                            <li>Providing assurance to stakeholders that the tax collection and enforcement processes are operating effectively and efficiently.</li>
+
+                        </ul>
+
+
+                        <h2 class="Mtop-10">Audit Procedures for Revenue Recognition</h2>
+                        <p>For an auditor to determine the risk of substantial inaccurate statements, he or she must understand the requirements of the new revenue recognition standard. For a detailed description of the process, contact <a href="@Url.Action("ContactUs", "Pages")">AMCA</a>.</p>
+
+                        <h2 class="Mtop-10">The Notification</h2>
+                        <p>After the selection for the Revenue Audit, the organization will be given written notice twenty-one (21) days before the scheduled audit date. The letter will explicitly state the audit starting date.</p>
+                        <p>The letter includes the following information:</p>
+                        <ul>
+                            <li>the nature of the Revenue Audit</li>
+                            <li>the scope of an audit</li>
+                            <li>the specific period of the auditing process</li>
+                            <li>the potential use of extensive e-auditing techniques</li>
+                        </ul>
+
+                        <h2>The Qualifying Disclosure</h2>
+                        <p>When the taxpayer receives the written notice following the issuance date of the letter, the taxpayers are no longer allowed to make the “unprompted qualifying disclosure.”</p>
+                        <p>The taxpayer can still prepare the “prompted qualifying disclosure” before the examinations of books and records begin.</p>
+                        <h2>How can we help?</h2>
+                        <p><i>AMCA can help our clients prepare all the prerequisites for their Revenue Audit. Our professional and expert auditors are equipped to assist and ensure their obligations towards the tax and duty legislation.</i></p>
+                        <p>With quarterly check-ups, we will ensure our clients' well-being. As a result, we can be confident that our customers' tax enforcing duties are adequately maintained. Additionally, we will contact the Revenue Department to verify if any fines or interest are due, and we will come up with the best possible remedy or settlement.</p>
+                        <p>We promise to provide customers with a strong future by providing the most effective service.</p>
+                       
+                        <h2>Frequently Asked Questions</h2>
+
+                        <ul>
+                            <li>
+                                <strong>What is the role of the auditor in an audit? </strong>
+                                <p>The auditor's role is to provide an opinion on financial statements' accuracy, completeness, and fairness and identify areas for improvement.   </p>
+                            </li>
+                            <li>
+                                <strong>What is the difference between a review and an audit?</strong>
+                                <p>A review engagement provides limited assurance on financial statements, while an audit provides reasonable    assurance. A review engagement involves less testing and fewer procedures than an audit. Further, a review provides 'negative assurance assertion' where as an audit provides 'positive assurance assertion’.</p>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/revenue-audit");
+    })
+</script>
+

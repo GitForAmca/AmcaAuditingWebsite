@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "ThankyouAudit";
+    Layout = "~/Views/Shared/_ThankyouLayout.cshtml";
+}
+
+<div class="row">
+    <div class="msgthankyou">
+        <img src="img/mailGraphics.svg" class="img-responsive" alt="AMCA" title="Thank You">
+        <h1>Thankyou, enjoy!</h1>
+        <p class="text-center">We are doing our best to be as responsive as possible and our experts will get back to you soon.</p>
+        <button class="btn btn-theme btn-color-1 Mtop-20" onclick="location.href='@Url.Action("Index", "Pages")';return false;"><i class="las la-long-arrow-alt-left"></i> Back Home</button>
+    </div>
+</div>
+
+<script>
+    if (window.location.href.indexOf('/thankyouAudit') != -1) {
+        gtag('event', 'conversion', { 'send_to': 'AW-672222857/bPPRCMfymsgCEImdxcAC' });
+    }
+</script>

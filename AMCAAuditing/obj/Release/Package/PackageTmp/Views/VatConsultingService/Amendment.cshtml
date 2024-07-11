@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "VAT Amendment UAE | VAT Registration Amendment";
+    ViewBag.Keyword = "vat consultants in dubai, VAT filing, business owners, filing of VAT, vat consultants, filing of VAT, VAT consultants, licensed tax agency in uae, vat, excise tax, dederal tax authority";
+    ViewBag.Description = "On 4 june 2020, the UAE Cabinet issued a Cabinet Decision (No. 46 of 2020) to amend Clause (2) of Article 31 of the Cabinet Decision No. 52 of 2017";
+    ViewBag.PageTitle = "VAT Amendment";
+    ViewBag.Amendment = "ActiveSubLink";
+    ViewBag.ServiceActive = "active";
+    ViewBag.ogImageUrl = "https://amcaauditing.com/img/img1.svg";
+}
+
+<section class="banner-sec-top">
+    <div class="row breadcrumb-banner-sec">
+        <div class="col-md-6 broudcrumb-left">
+            <div class="broudcrumb-content">
+                <h1 class="h1Heading">@ViewBag.PageTitle</h1>
+                <ul class="broudcrumb">
+                    <li><a href="@Url.Action("Index", "Pages")">Home</a></li>
+                    <li>
+                        Services
+                    </li>
+                    <li>
+                        VAT Consulting
+                    </li>
+                    <li>
+                        VAT Amendment
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 broudcrumb-right">
+            <img src="../../img/services/vat-amendment.svg" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle" />
+        </div>
+    </div>
+</section>
+<section>
+    <div class="row padding-section">
+        <div class="container mobile-order">
+            @RenderPage("~/Views/Sidebar/VATSidebar.cshtml")
+            <div class="col-md-8 order-1">
+                <div class="row">
+                    <div class="col-md-12">
+                        @RenderPage("~/Views/VatConsultingService/EnquiryForm.cshtml")
+                    </div>
+                    <div class="col-md-12">
+                        <p>Since its implementation in the United Arab Emirates on 1st January 2018, VAT may be a familiar term among businessmen and entrepreneurs.  Businesses with a turnover exceeding AED 375000 per year must register with VAT.  Depending on the nature of the VAT application, the firm's details may need to be amended after registration. Within 20 days of the date of the change, these amendments must be reported to the FTA. These changes can be easily made online. Depending on what changes are made, some changes may require FTA approval, while others may not.</p>
+                        <h2>Direct amendments are prohibited in specific fields</h2>
+                        <p>In the following list, you will find the fields which cannot be edited directly:</p>
+                        <ol class="Mtop-20">
+                            <li>The 'Exception from VAT registration' under the section 'About the VAT application' cannot be changed directly.</li>
+                            <li>There is no direct way to update the field 'Notification language change' in the Declaration section</li>
+                            <li>The firm cannot directly update communications preferences.</li>
+                        </ol>
+                        <p>VAT registration in the UAE and the procedure to amend it should be familiar to all business firms. By doing so, penalties can be avoided.</p>
+                        <h3>How can AMCA help?</h3>
+                        <p>Amca has a reputation for providing tailored services. We offer a full range of accounting and auditing services, including internal auditing, tax auditing, management accounting, bookkeeping, and tax consultancy services. You can count on AMCA's comprehensive services for a cost-effective and professional approach to addressing the challenges of your business. Additionally, we ensure our clients comply with all laws and regulations.</p>
+                        <p><i>Contact AMCA for more information about any tax-related details or procedures.</i></p>
+
+
+                        <h3>Frequently Asked Questions</h3>
+                        <ul>
+                            <li>
+                                <strong>Is VAT applicable to all products and services?</strong>
+                                <p>
+                                    Almost all transactions in goods and services consumed in the UAE will be subject to VAT, a general consumption tax.
+                                </p>
+                            </li>
+                            <li>
+                                <strong>What is the difference between VAT and Excise Tax?</strong>
+                                <p>
+                                    VAT is charged from the manufacturer to the end consumer at every supply chain step. In contrast, excise taxes are usually levied during the manufacturing process, Import, and only on excise goods.
+                                </p>
+                            </li>
+                            <li>
+                                <strong>Is it possible for businesses to claim VAT on expenses incurred?</strong>
+                                <p>
+                                    Yes, Businesses can claim VAT under some circumstances.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/vat-amendment");
+         })
+
+</script>
+
+

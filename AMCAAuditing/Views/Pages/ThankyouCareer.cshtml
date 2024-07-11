@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Application Submitted";
+    Layout = "~/Views/Shared/_ThankyouLayout.cshtml";
+}
+@model AMCAAuditing.Models.ExperienceDesignation
+<div class="row">
+    <div class="container">
+        <div class="msgthankyou" style="width:auto">
+            <h1>Thank You!</h1>
+            <img src="~/img/check.svg" alt="check" style="width: 10%" />
+            <p><strong>Candidate Id: @TempData["Id"]</strong></p>
+            <p>
+                Dear <strong style="color:#333">@TempData["Name"]</strong>, Thanks for Applying for the position of <strong style="color:#333">@TempData["ApplyJob"]</strong>. We will review your Application and if finds suitable, will get back to you shortly.
+            </p>
+            <button class="btn btn-theme btn-color-1 Mtop-20" onclick="location.href='@Url.Action("Index", "Pages")';return false;"><i class="las la-long-arrow-alt-left"></i> Back Home</button>
+        </div>
+    </div>
+</div>

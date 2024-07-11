@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "VAT Reconsideration | UAE VAT Penalty Reconsideration";
+    ViewBag.Keyword = "vat consultants in dubai, VAT filing, business owners, filing of VAT, vat consultants, filing of VAT, VAT consultants, licensed tax agency in uae, vat, excise tax, dederal tax authority";
+    ViewBag.Description = "UAE VAT reconsideration allows a taxable person to appeal for the decision made by the FTA within 20 business days after receiving the penalty";
+    ViewBag.PageTitle = "UAE VAT Reconsideration";
+    ViewBag.Reconsideration = "ActiveSubLink";
+    ViewBag.ServiceActive = "active";
+    ViewBag.ogImageUrl = "https://amcaauditing.com/img/img1.svg";
+}
+<section class="banner-sec-top">
+    <div class="row breadcrumb-banner-sec">
+        <div class="col-md-6 broudcrumb-left">
+            <div class="broudcrumb-content">
+                <h1 class="h1Heading">@ViewBag.PageTitle</h1>
+                <ul class="broudcrumb">
+                    <li><a href="@Url.Action("Index", "Pages")">Home</a></li>
+                    <li>Services</li>
+                    <li>
+                        VAT Consulting
+                    </li>
+                    <li>VAT Reconsideration</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 broudcrumb-right">
+            <img src="~/img/services/vat-reconsideration.svg" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle" />
+        </div>
+    </div>
+</section>
+<section>
+    <div class="row padding-section">
+        <div class="container mobile-order">
+            @RenderPage("~/Views/Sidebar/VATSidebar.cshtml")
+            <div class="col-md-8 order-1">
+                <div class="row">
+                    <div class="col-md-12">
+                        @RenderPage("~/Views/VatConsultingService/EnquiryForm.cshtml")
+                    </div>
+                    <div class="col-md-12">
+                        <h2>What is VAT Reconsideration in UAE?</h2>
+                        <p>A business or individual that receives a tax penalty from FTA can apply for a VAT reconsideration in UAE within 20 business days of receiving the penalty. Providing proof of the reasons for VAT reconsideration would allow the authority to review the decision and waive the penalties for late VAT payments.</p>
+                        <h2>How to apply for VAT Reconsideration in UAE?</h2>
+                        <p>The FTA's website provides a form for VAT reconsideration. Companies can submit VAT reconsideration through the website. However, they must submit the reconsideration form and supporting documents in Arabic to appeal any decisions made by FTA. The FTA won't consider a request or supporting documents submitted in English.</p>
+                        <h3>How does FTA React to the VAT Reconsideration filed?</h3>
+                        <p>It may take up to 40 business days to respond to a valid and complete Clarification request. FTA will ask for additional information if incomplete requests are submitted, and it can take up to 40 business days for the FTA to respond.</p>
+                        <h3>What information is needed to file the VAT Reconsideration Form?</h3>
+                        <ol class="Mtop-20">
+                            <li>VAT Registration certificate
+                            <li>Emirates ID used for registration
+                            <li>Passport copy used for registration
+                            <li>Registered mobile number and Memorandum of Association to check the affirmed individual.
+                            <li>The amount of penalty
+                            <li>The date of the penalty
+                            <li>Detailed facts and data clarifying the reasons for reconsideration
+                        </ol>
+                        <h3>
+                            What Documents are required for the VAT Reconsideration Form?
+                        </h3>
+                        <p>
+                            Various documents are required for the VAT reconsideration form in UAE, and it's best to seek guidance from a qualified tax consultant such as AMCA to ensure you have a comprehensive list and all necessary details. AMCA Auditing can provide expert advice and assistance to help you navigate the VAT reconsideration process smoothly.
+                        </p>
+                        <h3>Let AMCA Help you!</h3>
+                        <p>AMCA Auditing excels at assisting clients with any reconsideration applications. In addition, we have extensive experience assisting clients in applying VAT laws that are useful to businesses operating in the region.</p>
+
+                        <h3 class="Mtop-10">Frequently Asked Questions</h3>
+                        <ul>
+                            <li>
+                                <strong>What is the purpose of the UAE Government introducing VAT?</strong>
+                                <p>
+                                    UAE generates new income from VAT. As a result, high-quality public services can continue to be provided. Additionally, it will reduce UAE's reliance on oil and hydrocarbons as a revenue source.
+                                </p>
+                            </li>
+                            <li>
+                                <strong>When did VAT come into effect? </strong>
+                                <p>
+                                    As of 1 January 2018, VAT was introduced across the UAE.
+                                </p>
+                            </li>
+                            <li>
+                                <strong>How is VAT collected by the government?</strong>
+                                <p>
+                                    Businesses are responsible for keeping careful records of their income, costs, and associated VAT charges. VAT is charged to all registered businesses and traders at the prevailing rate and is incurred on the goods and services they purchase from suppliers. Differences in these amounts are reclaimed or paid to the government.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/uae-vat-reconsideration");
+         })
+
+</script>

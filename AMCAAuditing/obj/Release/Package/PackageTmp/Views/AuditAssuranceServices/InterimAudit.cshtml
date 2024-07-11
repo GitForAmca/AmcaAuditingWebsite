@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Interim Audit Services | Interim Audit Report";
+    ViewBag.Keyword = "interim audit, annual audits, interim earnings, interim dividend, balance sheet, auditors, financial statements, final audit, audit activities, audit policy, interim financial statements, continuous audit, accounting record, assets, liabilities, moral check, accounting staff, audit notes, ministry of economy, moe, licensed auditor, llc, free zone, audited financial statements";
+    ViewBag.Description = "Interim Audit Services. With the help of our expertise, we’ll assist your company with the completion of your interim audit.";
+    ViewBag.PageTitle = "Interim Audit";
+    ViewBag.InterimAudit = "ActiveSubLink";
+    ViewBag.ServiceActive = "active";
+    ViewBag.ogImageUrl = "https://amcaauditing.com/img/img1.svg";
+}
+
+<section class="banner-sec-top">
+    <div class="row breadcrumb-banner-sec">
+        <div class="col-md-6 broudcrumb-left">
+            <div class="broudcrumb-content">
+                <h1 class="h1Heading">@ViewBag.PageTitle</h1>
+                <ul class="broudcrumb">
+                    <li><a href="@Url.Action("Index", "Pages")">Home</a></li>
+                    <li>Services</li>
+                    <li>
+                        VAT Consulting
+                    </li>
+                    <li>Interim Audit</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 broudcrumb-right">
+            <img src="~/img/services/interim-audit.svg" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle" />
+        </div>
+    </div>
+</section>
+<section>
+    <div class="row padding-section">
+        <div class="container mobile-order">
+            @RenderPage("~/Views/Sidebar/AuditSidebar.cshtml")
+            <div class="col-md-8 order-1">
+                <div class="row">
+                    <div class="col-md-12">
+                        @RenderPage("~/Views/AuditAssuranceServices/EnquiryForm.cshtml")
+                    </div>
+                    <div class="col-md-12">
+                        <p>An interim audit is carried out between two annual audits to determine interim earnings. It allows the company to declare an interim dividend or assess the purpose of evaluating the value of the shares. This audit includes a thorough review of transactions and a review of records and accounts up to date. It is an audit that takes place between two audits of the balance sheet.</p>
+                        <p>The auditors typically conduct the interim audit in some of their client’s financial statements for six to nine months. This is an excellent advantage to the auditors as they will have less work to do at the final audit or by the end of the year. However, they may not need to do so for all audit activities since this depends on the audit policy of the auditor.</p>
+                        <p>On the other hand, an interim audit is similarly performed in response to the client's request, requiring their interim financial statements to be reviewed every quarter.</p>
+                        <h2>Can Interim Audit Services be Worth the Investment?</h2>
+                        <p>It makes sense to invest in an interim audit to help improve your company makes sense. Investors and stakeholders can view the financial analysis and details on the cash flow. So, your company can detect fraud and other issues with the help of an interim auditor. This improves the overall efficiency of your company's cash flow, and you can better control the financial conditions of your company.</p>
+                        <h2>Advantages of Interim Audit:</h2>
+                        <ol>
+                            <li>Cost-effective</li>
+                            <li>Suitable for large businesses</li>
+                            <li>Quick completion of the final audit</li>
+                            <li>Prompt Detection of Errors and Fraud</li>
+                            <li>Valid for the Investors</li>
+                            <li>Moral check on the staff of the client</li>
+                            <li>The accounting record is kept up to date</li>
+                            <li>Quickly figuring out the position of assets and liabilities</li>
+                        </ol>
+                        <h3>We are here to help</h3>
+                        <p><i>AMCA, with a decade-long experience, is registered with the Ministry of Economy (MOE) to operate as a Licensed Auditor. Our audits are widely accepted in Mainland Authorities (LLC) and all Major Free Zones, including DMCC, JAFZA, DAFZA, DWC, DIFC, and DSO.</i></p>
+                        <p>
+                            With our expertise, we'll assist your company with completing your interim audit; similarly, we’ll help you be at ease in conducting and finalizing your final audit. The client can release his audited financial statements quickly through an interim audit. With our assistance, you will be able to engage in other events with more customers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/interim-audit");
+         })
+</script>

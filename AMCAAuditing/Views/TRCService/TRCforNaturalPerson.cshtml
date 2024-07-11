@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "TRC for Natural Person | UAE Tax Residency Certificate";
+    ViewBag.Keyword = "UAE Tax Residency Certificate, TRC Certificate Dubai, Taxation Residency Certificate (TRC) User Guide, Tax Domicile, Tax Domicile Certificate, TRC for Legal Person, TRC for Natural Person";
+    ViewBag.Description = "It is important to note that if you are applying as an individual for a TRC, you must be a resident for a period of more than half a year in the United Arab Emirates.";
+    ViewBag.PageTitle = "TRC for Natural Person";
+    ViewBag.TRCforNaturalPerson = "ActiveSubLink";
+    ViewBag.ServiceActive = "active";
+    ViewBag.ogImageUrl = "https://amcaauditing.com/img/img1.svg";
+}
+
+<section class="banner-sec-top">
+    <div class="row breadcrumb-banner-sec">
+        <div class="col-md-6 broudcrumb-left">
+            <div class="broudcrumb-content">
+                <h1 class="h1Heading">@ViewBag.PageTitle</h1>
+                <ul class="broudcrumb">
+                    <li><a href="@Url.Action("Index", "Pages")">Home</a></li>
+                    <li>Services</li>
+                    <li>
+                        Tax Residence Certificate
+                    </li>
+                    <li>TRC for Natural Person</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 broudcrumb-right">
+            <img src="~/img/services/tax-residence-certificate.svg" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle" />
+        </div>
+    </div>
+</section>
+<section>
+    <div class="row padding-section">
+        <div class="container mobile-order">
+            @RenderPage("~/Views/Sidebar/TRCSidebar.cshtml")
+            <div class="col-md-8 order-1">
+                <div class="row">
+                    <div class="col-md-12">
+                        @RenderPage("~/Views/TRCService/EnquiryForm.cshtml")
+                    </div>
+                    <div class="col-md-12">
+                        <p>As a country once dependent on oil revenue, the UAE has evolved into a country with a diverse economy that attracts investors from around the world within a brief period.</p>
+                        <p>As centers of international finance, Dubai, and Abu Dhabi have embraced the latest technologies and have developed into world-renowned tourist destinations with world-renowned landmarks and high-class hotels.</p>
+                        <p>In addition to its favorable tax environment, the UAE offers many other business incentives. For example, income tax is not applied to most UAE-based companies. In addition, several double taxation agreements have been negotiated with trade partners to prevent the same taxpayer from paying taxes twice.</p>
+                        <p>The UAE currently has 123 in force or negotiation for double taxation agreements. It allows member countries to exchange goods, capital, and services freely with other countries and protects them from double taxes.</p>
+                        <p>Tax Domicile Certificates (TDC), also known as Tax Residency Certificates (TRCs), are required for companies or individuals to benefit from the UAE's double taxation avoidance agreements.</p>
+                        <h2>What is a Tax Residency Certificate? </h2>
+                        <p>Individuals (<strong>Formally known as Natural Person</strong>) operating in the UAE may utilize the double taxation avoidance agreements by obtaining a Tax Residency Certificate issued by the UAE Federal Tax Authority (FTA).</p>
+                        <p>Residents of the UAE who have lived there for at least 180 days and want to establish tax residency can apply for a Tax Residency Certificate. Those whose native country does not have a double taxation agreement with the UAE will benefit from this opportunity. </p>
+                        <p><strong>Requirements to obtain the Tax Residency Certificate by a Natural Person</strong></p>
+                        <p>An individual's requirements for obtaining a Tax Residency Certificate differ from those of a corporation. </p>
+                        <ul class="Mtop-20">
+                            <li>
+                                <strong>To receive a Tax Residency Certificate in the UAE, an individual must fulfill the following requirements</strong>
+                                <p>To proceed, the following documents must be submitted:</p>
+                                <ol>
+                                    <li>A copy of your passport and a copy of your valid visa issued at least 180 days ago</li>
+                                    <li>Copy of Emirates ID</li>
+                                    <li>An official stamp from the bank on six months' worth of personal UAE bank statements</li>
+                                    <li>The employment agreement, share certificates, and salary certificates - all of which prove income in the UAE</li>
+                                    <li>Detailed information about all UAE entries and exits can be found in a report from the General Directorate of Residency and Foreign Affairs (GDRFA)</li>
+                                    <li>Prior to application, a certified copy of the tenancy contract or ejari must be provided</li>
+                                </ol>
+                            </li>
+                        </ul>
+                        <h3>Timeframe of obtaining the UAE Tax Residency Certificate</h3>
+                        <p>A preapproval process with FTA typically takes four to five business days if all necessary documents are available. However, it can take up to 5 working days for the FTA to issue the tax residency certificate after pre-approval and confirmation that all documents are correct.</p>
+                        <p>Upon resubmission and renewal, the Tax Residency Certificate / Tax Domicile Certificate will be valid for another year.</p>
+                        <p><strong>A UAE Tax Residency Certificate offers many benefits.</strong></p>
+                        <ul>
+                            <li>When setting up a business, investors in the UAE can gain access to international markets.</li>
+                            <li>Besides avoiding double taxation, residents of the UAE also receive tax incentives due to being a resident there.</li>
+                            <li>A comprehensive understanding of your business structure and individual circumstances is essential to effective tax planning.</li>
+                            <li>To maximize the benefits of UAE tax residency, we recommend you always seek professional tax advice and accounting and financial support.</li>
+                        </ul>
+                        <h2>How can AMCA help?</h2>
+                        <p>The AMCA has direct access to government departments and can assist you with acquiring the TDC and any other regulatory approvals and licenses. In addition, we can help you obtain a Tax Residency Certificate in the UAE as an individual or a company, or with any other company setup, restructuring, local partner, or PRO support matter in the UAE.</p>
+                    </div>
+
+                    <div class="col-md-12">
+                        <h3>Frequently Asked Questions</h3>
+                        <ul class="Mtop-20">
+                            <li>
+                                <strong>Who needs a TRC in the UAE?</strong>
+                                <p>Any natural person who wants to claim tax benefits or exemptions under a double taxation avoidance agreement (DTAA) between the UAE and another country may need to obtain a TRC.</p>
+                            </li>
+                            <li>
+                                <strong>What is the validity of the TRC Certificate?</strong>
+                                <p>
+                                    An applicant's TRC is valid for one year beginning with the start of the financial year selected by the applicant.
+                                </p>
+                            </li>
+                         
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/trc-for-natural-person-in-uae");
+    })
+
+</script>
+
+
+
+

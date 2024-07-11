@@ -1,0 +1,114 @@
+﻿@model AMCAAuditing.Models.Candidate_Data_PL
+@{
+    ViewBag.Title = "Experienced Career Roles | Jobs in Dubai | Jobs in UAE";
+    ViewBag.PageTitle = "Experienced Career Roles";
+    ViewBag.Keyword = "jobs in uae, jobs in dubai, we are hiring, arabic auditor jobs in dubai, auditor jobs in dubai, aministrative specialist jobs in dubai, tele sales executive jobs in dubai, ";
+    ViewBag.Description = "Experienced career roles. We hire people with relevant experience across our company to assist us to reach our ambitious goals.";
+    ViewBag.Career = "active";
+    ViewBag.ogImageUrl = "https://amcaauditing.com/img/img1.svg";
+}
+
+<section>
+    <div class="row divider-banner">
+        <div class="container">
+            <div class="col-md-6">
+                <h1 class="h1Heading">
+                    @ViewBag.PageTitle
+                </h1>
+                <ul class="broudcrumb">
+                    <li>
+                        <a href="@Url.Action("Index", "Pages")">Home</a>
+                    </li>
+                    <li>
+                        Careers
+                    </li>
+                    <li>
+                        Experienced Career Roles
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bannerimg-bg"></div>
+    </div>
+</section>
+
+<section>
+    <div class="row padding-section">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>
+                            AMCA was founded in 2010 with the intention of primarily serving as an auditing firm. Our commitment to excellence and in-depth knowledge of the industry has
+                            aided us in establishing ourselves as a pioneer in the field. We have served many companies in both the public and private sectors throughout our decade-long presence. As one of the
+                            leading audit firms in Dubai, we provide a full range of accounting, audit, and taxation services.
+                        </p>
+                        <p>
+                            We're always looking for talented, driven individuals who can bring new skills to what we do. We hire people with relevant experience across our
+                            company to assist us to reach our ambitious goals. We try to provide a positive work environment, ongoing professional growth, a commitment to
+                            work-life balance, and equal opportunity for all of osur employees. You can explore all open roles at the organization if you're an experienced
+                            professional looking to join our team. You can also use our Jobs Network to submit your resume. If you're a good fit for any future positions,
+                            we'll contact you.
+                        </p>
+                    </div>
+                </div>
+
+                @foreach (var eachJob in Model.listData)
+                {
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-12 job-all-list">
+                                <div class="col-md-6">
+                                    @if (eachJob.JobTitle.ToString() == "Data Entry Clerk" || eachJob.JobTitle.ToString() == "Auditor" || eachJob.JobTitle.ToString() == "Telesales Executive" || eachJob.JobTitle.ToString() == "Certified Public Accountant" || eachJob.JobTitle.ToString() == "Auditor (CA/CPA/ACCA)")
+                                    {
+                                        <span class="newJobs">We Are Hiring</span>
+                                    }
+                                    <h2>@eachJob.JobTitle</h2>
+                                    @*<h2><a id="@eachJob.AutoId" href="" class="eachJob">@eachJob.JobTitle</a></h2>*@
+                                    <div class="pill">
+                                        <ul>
+                                            <li>@eachJob.JobType</li>
+                                            <li>Posted On: @eachJob.createdOn</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 right-section">
+                                    <div class="d-flex-job">
+                                        @if (eachJob.JobTitle.ToString() == "Telesales Executive")
+                                            {
+                                                <div class="location">Abu Dhabi <span>UAE</span></div>
+                                            }
+                                            else
+                                            {
+                                                <div class="location">Dubai <span>UAE</span></div>
+                                            }
+                                            @*<div class="button-job">
+
+                                                 
+                                                <a id="@eachJob.AutoId" href="@eachJob.PageURL.ToString()" class="btn btn-theme btn-color-1 eachJob" role="button">View and Apply</a>
+                                            </div>*@
+                                       
+                                       @if (eachJob.JobTitle.ToString() == "Data Entry Clerk" || eachJob.JobTitle.ToString() == "Auditor" || eachJob.JobTitle.ToString() == "Telesales Executive" || eachJob.JobTitle.ToString() == "Certified Public Accountant" || eachJob.JobTitle.ToString() == "Auditor (CA/CPA/ACCA)")
+                                            {
+                                                <div class="button-job">
+
+                                                    <a id="@eachJob.AutoId" href="@eachJob.PageURL.ToString()" class="btn btn-theme btn-color-1 eachJob" role="button">View and Apply</a>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="button-job">
+                                                    <button type="button" class="btn btn-theme btn-color-1 eachJob" disabled role="button">View and Apply</button>
+                                                 </div>
+                                              }
+
+                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

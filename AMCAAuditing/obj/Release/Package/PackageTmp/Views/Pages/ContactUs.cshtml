@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "Contact Us | AMCA Auditing & Accounting";
+    ViewBag.PageTitle = "Contact Us";
+    ViewBag.Keyword = "amca address, amca auditing address, amca comtact us";
+    ViewBag.Description = "Dubai Office: Unit No. 1801, Cluster T Fortune Executive Tower JLT, DMCC, Dubai, UAE | Unit no 304, RAK Bank Building Sheikh Zayed Road, Dubai, UAE, P.O Box 117346";
+    ViewBag.Contact = "active";
+    ViewBag.ogImageUrl = "https://portal.amca.ae/UploadedFile/amcaauditing/Blogs/dmcc-audit-report-deadline-2020.svg";
+}
+
+<section>
+    <div class="row divider-banner">
+        <div class="container">
+            <div class="col-md-6">
+                <h1 class="h1Heading">@ViewBag.PageTitle</h1>
+                <ul class="broudcrumb">
+                    <li>
+                        <a href="@Url.Action("Index", "Pages")">Home</a>
+                    </li>
+                    <li>
+                        Contact Us
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bannerimg-bg"></div>
+    </div>
+</section>
+<section>
+    <div class="row padding-section pages-wrap">
+        <div class="container">
+            <div class="col-md-12">
+                <h2 class="middle-heading">
+                    Get in touch with AMCA
+                </h2>
+                <p>
+                    AMCA Auditing provides professional auditing, accounting, tax services, vat consulting, and liquidation services to clients all over the UAE. AMCA was established in 2010, primarily as an auditing firm. We are FTA approved Tax Agency. AMCA is well experienced with handling clients from various industries, which equips it for handling a wide range of clients and enables it to provide customized services that cater to each client’s needs. For any accounting & auditing-related queries, please contact us.
+                </p>
+                <p>
+                    A member of our staff would always be happy to assist you if you have any questions or concerns. Please feel free to contact us by phone or email, and we will respond as soon as possible.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="row padding-bottom">
+        <div class="container">
+            <div class="col-md-4">
+                <div class="address-wrapper">
+                    <h3><strong>Our Location</strong></h3>
+                    <div class="divider-contact"></div>
+                    <h4>
+                        Corporate Office
+                    </h4>
+                    <p class="address-co">
+                        Unit No. 1801, Cluster T Fortune Executive Tower JLT, DMCC, Dubai, UAE
+                    </p>
+                    <p>  <a href="mailTo:info@amca.ae">info@amcaauditing.com</a>  <span><a href="Tel:+97142408784">+971 4 240 8784</a></span></p>
+                    <h4>
+                        Dubai Office
+                    </h4>
+                    <p class="address-co">
+                        Unit no 301, RAK Bank Building Sheikh Zayed Road, Dubai, UAE, <br /> P.O Box 117346
+                    </p>
+                    <p>
+                        <a href="mailTo:info@amcaauditing.com">info@amcaauditing.com</a>  <span><a href="Tel:+97143211204">+971 4 321 1204</a></span>
+                    </p>
+
+                    <h4>
+                        Abu Dhabi Office
+                    </h4>
+                    <p class="address-co">
+                        Unit No. 919, Building No. 9,
+                        <br />Dar Al Salam, Corniche Road.<br />
+                        Abu Dhabi, UAE
+
+                    </p>
+                    <p><a href="mailTo:info@amcaauditing.com">info@amcaauditing.com</a> <span><a href="Tel:+ +97125827200"> +971 2 582 7200</a></span></p>
+                    @*<p class="address-co">
+            Unit No. 501, 7th Floor Mazayad Mall, 28th Street, Abu Dhabi, UAE
+        </p>
+        <p><a href="mailTo:info@amcaauditing.com">info@amcaauditing.com</a>  <span><a href="Tel:+97142408784">+971 2 551 5881</a></span></p>*@
+                </div>
+            </div>
+            <div class="col-md-8 resp-margin">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.676577715888!2d55.14691711537925!3d25.078948842641307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f427c4a851f37%3A0x4329cfe0c67b85dd!2sAMCA!5e0!3m2!1sen!2sae!4v1581919240230!5m2!1sen!2sae" width="100%" height="650" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                <br /><br />
+               
+                @*<p class="tagline"><span>contact form</span></p>
+        <h3 class="middle-heading">
+            Feel Free to Contact Us
+        </h3>
+        <br />
+        @RenderPage("~/Views/Enquiry/EnquiryPagesForm.cshtml")*@
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/contact-us");
+        $("#txtPageName").val("ContactUs");
+    })
+</script>
+

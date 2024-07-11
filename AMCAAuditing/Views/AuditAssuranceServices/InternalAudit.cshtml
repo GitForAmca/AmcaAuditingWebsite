@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Internal Audit | Certified Internal Auditors in Dubai";
+    ViewBag.Keyword = "internal audit in dubai, owning a business, risk management, risk assessment, iso 31000, business risks, risks, internal audit, business objectives, organizational value, internal auditor, internal control, uae law, quality audit, data breach, internal network, ministry of economy, audit services, internal control, external audit, tax audit, revenue audit, interim audit, uae free zones";
+    ViewBag.Description = "Internal audit in Dubai. AMCA is one of the best internal audit firm in Dubai. Our internal auditors can help you to meet the business requirements.";
+    ViewBag.PageTitle = "Internal Audit Dubai";
+    ViewBag.InternalAudit = "ActiveSubLink";
+    ViewBag.ServiceActive = "active";
+    ViewBag.ogImageUrl = "https://amcaauditing.com/img/img1.svg";
+}
+<section class="banner-sec-top">
+    <div class="row breadcrumb-banner-sec">
+        <div class="col-md-6 broudcrumb-left">
+            <div class="broudcrumb-content">
+                <h1 class="h1Heading">@ViewBag.PageTitle</h1>
+                <ul class="broudcrumb">
+                    <li><a href="@Url.Action("Index", "Pages")">Home</a></li>
+                    <li>Services</li>
+                    <li>
+                        VAT Consulting
+                    </li>
+                    <li>Internal Audit</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 broudcrumb-right">
+            <img src="~/img/services/internal-audit.svg" alt="@ViewBag.PageTitle" title="@ViewBag.PageTitle" />
+        </div>
+    </div>
+</section>
+<section>
+    <div class="row padding-section">
+        <div class="container mobile-order">
+            @RenderPage("~/Views/Sidebar/AuditSidebar.cshtml")
+            <div class="col-md-8 order-1">
+                <div class="row">
+                    <div class="col-md-12">
+                        @RenderPage("~/Views/AuditAssuranceServices/EnquiryForm.cshtml")
+                    </div>
+                    <div class="col-md-12">
+                        <p>A company's internal audit service provides an independent, objective assurance and consulting to make the organization's operations more efficient and effective. A business can achieve its objectives through an internal audit by applying a methodical, meticulous, and disciplined approach. In addition, an independent appraisal activity evaluates operations within an organization as a service to the organization.</p>
+                        <h2>The Objectives of an Internal Audit</h2>
+                        <p>A compliance audit evaluates governance, risk management, and control processes. An internal audit will help a company:</p>
+                        <ul>
+                            <li>Evaluating and improving the effectiveness of the organization's risk management, control, and governance processes.</li>
+                            <li>Ensuring compliance with applicable laws, regulations, and internal policies and procedures.</li>
+                            <li>Providing assurance to the organization's management and board of directors on the reliability and integrity of financial and non-financial information.</li>
+                            <li>Identifying opportunities for improving operational efficiencies and reducing costs.</li>
+                            <li>Providing recommendations for improving the organization's operations, risk management, and control processes.</li>
+                          
+                        </ul>
+                        <h2>What AMCA Auditing Offer</h2>
+                        <p>Among the key contributions an effective internal audit service can make to managing risk and smooth operation of a business is to manage risk efficiently. Therefore, AMCA Auditing offers the following advantages to its clients regarding internal audits:</p>
+                        <ul>
+                            <li>We assist the management in identifying and prioritizing areas that require attention and audit focus. They can use AMCA Auditing to understand current processes and procedures and recommend best practices to increase productivity and ensure efficient resource utilization.</li>
+                            <li>In cases where procedures and controls haven't been planned adequately, AMCA Auditing helps identify the problems.</li>
+                            <li>We also make recommendations for managing core operational risks, particularly those relating to the consistency of business operations.</li>
+                            <li>Our services connect operational strategies to risk performance measures to achieve business objectives.</li>
+                            <li>Experts at AMCA Auditing assist in evaluating the fundamental structures, dynamics, and processes required to enhance corporate governance.</li>
+                        </ul>
+                        <h2>AMCA Auditing Internal Audit Services in Dubai</h2>
+                        <p>With an excellent team packed with highly qualified professionals in auditing and bookkeeping, AMCA Auditing is famous for being one of the best internal audit firms in Dubai. We at AMCA Auditing assist you with establishing Internal Control Procedures, Organizational Hierarchy, Segregation of Duties, and Cashflow Management by utilizing competent policies and strategies. </p>
+                        <p>The clients can be assured that their accounts comply with IFRS and ISA with the help of our experienced professionals with accounting and auditing backgrounds. They will also have accurate, current, and reliable financial statements for future reference.</p>
+                        <p>Other than Internal Audit Services in Dubai, AMCA Auditing offers all other business-related services like CFO services, Internal & External Audit Services, Audit in Free Zone, VAT Return Filing Services, and many other services related to your business needs. </p>
+                        <p>Need any help with internal audit services in Dubai? You are welcome to contact us; our experts will give you a one-hour free consultation on your queries on your business needs.</p>
+
+                        <h2>Frequently Asked Questions</h2>
+
+                        <ul>
+                            <li>
+                                <strong>Who conducts audits?</strong>
+                                <p>Audits are typically conducted by independent external auditors licensed and registered with regulatory bodies.   Further if an audit is conducted by an internal auditor, they are hired by company's management for the sole purpose of audit and is a department within the entity. This is done to ensure the company's functions are done efficiently. They report directly to the Board of directors through an independent audit committee within the company.</p>
+                            </li>
+                            <li>
+                                <strong>What is the Liability of the Company’s auditor?</strong>
+                                <p>The auditor has a duty to employ such skill with reasonable care and diligence. The auditor undertakes his task(s) with good faith and integrity but is not infallible. The auditor may be liable for negligence, bad faith, or dishonesty, but not for mere errors in judgment. </p>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    $(document).ready(function () {
+        history.pushState("", document.title, window.location.origin + "/internal-audit-dubai");
+        
+    })
+</script>
+
