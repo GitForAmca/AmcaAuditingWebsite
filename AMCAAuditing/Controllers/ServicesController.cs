@@ -279,6 +279,26 @@ namespace AMCAAuditing.Controllers
 
             return ServicesQuery();
         }
+        [Route("excise-tax-uae")]
+        public ActionResult ExciseTaxServices()
+        {
+            string ExciseTax = "14";
+            Session["SER"] = "14";
+            ServiceModel PL = new ServiceModel();
+            PL.OpCode = 3;
+            PL.ServiceType = ExciseTax;
+            ServiceModelD.returnTable(PL);
+            ViewBag.Service = ToSelectList(PL.dt, "SubServiceName", "SubServiceName");
+            Session["txtPageName"] = "ExciseTaxServices";
+            ViewData["IndexInsight"] = BlogSearch(10);
+            Session["BlogSearch"] = 10;
+
+            PL.OpCode = 68;
+            ServiceModelD.returnTable(PL);
+            ViewBag.AuditAsssuranceSubServices = ToSelectList(PL.dt, "Id", "SubServiceName");
+
+            return ServicesQuery();
+        }
 
         [HttpPost]
         public ActionResult ServicesQuery(string LeadDataType,string AutoId, string CompanyName, string TradeLicenseAuthority, string ConcernPerson, string CountryCodeContact, string ContactNumber, string EmailId, string Service, string AboutAMCA, Validation model , string SubServiceId)
