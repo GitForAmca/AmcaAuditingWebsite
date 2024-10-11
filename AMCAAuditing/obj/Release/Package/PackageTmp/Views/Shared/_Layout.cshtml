@@ -209,6 +209,11 @@
                                                     <li><a href="@Url.Action("LiquidationProcess", "LiquidationService")">Liquidation Process</a></li>
                                                     <li><a href="@Url.Action("LiquidationReport", "LiquidationService")">Liquidator's Report</a></li>
                                                 </ul>*@
+                                        </li>                                        
+                                        <li class="hoverClassdrop">
+                                            <a href="@Url.Action("ExciseTaxServices", "Services")">
+                                                Excise Tax Services
+                                            </a> 
                                         </li>
                                     </ul>
                                 </li>
@@ -543,6 +548,12 @@
         //newsletter subscrib from alert message end
     </script>
     <script>
+        $(document).ready(function () {
+            //$(".renderClass").prop('class', 'textFld selectpicker form-control');
+            $(".renderClass").attr('data-live-search', true);
+        });
+    </script>
+    <script>
         $(function () {
             $('.search-SelectList').selectpicker({
                 liveSearch: true,
@@ -551,14 +562,23 @@
         });
 
     </script>
-    @*<script>
-        window.addEventListener('load', function () {
-            if (window.location.pathname == '/thankyou') {
-                gtag('event', 'conversion', { 'send_to': 'AW-672222857/MsGXCJDgosYDEImdxcAC' });
-            }
+    <script>
+        $(function () {
+            $('.selectpicker').selectpicker({
+                liveSearch: true,
+                showSubtext: true
+            });
         });
 
-    </script>*@
+    </script>
+    @*<script>
+            window.addEventListener('load', function () {
+                if (window.location.pathname == '/thankyou') {
+                    gtag('event', 'conversion', { 'send_to': 'AW-672222857/MsGXCJDgosYDEImdxcAC' });
+                }
+            });
+
+        </script>*@
 
     <script>
         window.addEventListener('load', function () {

@@ -59,7 +59,7 @@
                         <div class="col-md-12">
                             <div class="col-md-12 job-all-list">
                                 <div class="col-md-6">
-                                    @if (eachJob.JobTitle.ToString() == "Data Entry Clerk" || eachJob.JobTitle.ToString() == "Auditor" || eachJob.JobTitle.ToString() == "Telesales Executive" || eachJob.JobTitle.ToString() == "Certified Public Accountant" || eachJob.JobTitle.ToString() == "Auditor (CA/CPA/ACCA)")
+                                    @if (eachJob.IsActive.ToString() == "True")
                                     {
                                         <span class="newJobs">We Are Hiring</span>
                                     }
@@ -74,36 +74,21 @@
                                 </div>
                                 <div class="col-md-6 right-section">
                                     <div class="d-flex-job">
-                                        @if (eachJob.JobTitle.ToString() == "Telesales Executive")
-                                            {
-                                                <div class="location">Abu Dhabi <span>UAE</span></div>
-                                            }
-                                            else
-                                            {
-                                                <div class="location">Dubai <span>UAE</span></div>
-                                            }
-                                            @*<div class="button-job">
-
-                                                 
+                                        <div class="location">@eachJob.CurrentLocation.ToString()<span>@eachJob.CountryCode.ToString()</span></div>
+                                        @if (eachJob.IsActive.ToString() == "True")
+                                        {
+                                            <div class="button-job">
                                                 <a id="@eachJob.AutoId" href="@eachJob.PageURL.ToString()" class="btn btn-theme btn-color-1 eachJob" role="button">View and Apply</a>
-                                            </div>*@
-                                       
-                                       @if (eachJob.JobTitle.ToString() == "Data Entry Clerk" || eachJob.JobTitle.ToString() == "Auditor" || eachJob.JobTitle.ToString() == "Telesales Executive" || eachJob.JobTitle.ToString() == "Certified Public Accountant" || eachJob.JobTitle.ToString() == "Auditor (CA/CPA/ACCA)")
-                                            {
-                                                <div class="button-job">
-
-                                                    <a id="@eachJob.AutoId" href="@eachJob.PageURL.ToString()" class="btn btn-theme btn-color-1 eachJob" role="button">View and Apply</a>
-                                                </div>
-                                            }
-                                            else
-                                            {
-                                                <div class="button-job">
-                                                    <button type="button" class="btn btn-theme btn-color-1 eachJob" disabled role="button">View and Apply</button>
-                                                 </div>
-                                              }
-
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="button-job">
+                                                <button type="button" class="btn btn-theme btn-color-1 eachJob" disabled role="button">View and Apply</button>
+                                            </div>
+                                        }
                                     </div>
-                                        </div>
+                                </div>
                             </div>
                         </div>
                     </div>

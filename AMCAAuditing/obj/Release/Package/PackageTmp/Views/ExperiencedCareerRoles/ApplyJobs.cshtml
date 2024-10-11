@@ -77,7 +77,7 @@
                                     <div class="form-group">
                                         <label>Nationality<span style="color:red"> *</span></label>
                                         <div class="form-group">
-                                            @Html.DropDownListFor(model => model.Nationality, ViewBag.Nationality as SelectList, "Select One", new { @class = "form-control forminput-theme search-SelectList" })
+                                            @Html.DropDownListFor(model => model.Nationality, ViewBag.Nationality as SelectList, "Select One", new { @class = "form-control selectpicker forminput-theme" })
                                             @Html.ValidationMessageFor(model => model.Nationality, "", new { @class = "errorValidation" })
                                         </div>
                                     </div>
@@ -107,8 +107,9 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Job Position <span style="color:red"> *</span></label>
-                                @Html.DropDownListFor(model => model.JobPosition, ViewBag.JobTitle as SelectList, "Select One", new { @class = "form-control forminput-theme" })
+                                @Html.DropDownListFor(model => model.JobPosition, ViewBag.JobTitle as SelectList, "Select One", new { @class = "form-control selectpicker forminput-theme", @id = "JobPosition", onchange = "SelectedIndexChanged()" })
                                 @Html.ValidationMessageFor(model => model.JobPosition, "", new { @class = "errorValidation" })
+                                @Html.HiddenFor(model => model.JobTitle , new { @id = "JobTitle" })
                             </div>
                         </div>
                     </div>
@@ -183,7 +184,7 @@
                                 @Html.DropDownList("Experience", new List<SelectListItem>
                                 {
                                    new SelectListItem{ Text="-Select Option-", Value = "" },
-                                   new SelectListItem{ Text="Fresher", Value = "Fresher" },
+                                   new SelectListItem{ Text="Fresher", Value = "0" },
                                    new SelectListItem{ Text="< 1 Years", Value = "<1 Year" },
                                    new SelectListItem{ Text="1-2 Years", Value = "1-2 Years" },
                                    new SelectListItem{ Text="2-3 Years", Value = "2-3 Years" },
@@ -201,7 +202,7 @@
                                    new SelectListItem{ Text="30-35 Years", Value = "30-35 Years" },
                                    new SelectListItem{ Text="35-40 Years", Value = "35-40 Years" },
                                    new SelectListItem{ Text="40 Years <", Value = "35-40 Years <" },
-                                }, new { @class = "form-control forminput-theme" })
+                                }, new { @class = "form-control selectpicker forminput-theme" })
                                 @Html.ValidationMessageFor(model => model.Experience, "", new { @class = "errorValidation" })
                             </div>
                         </div>
@@ -211,7 +212,7 @@
                                 @Html.DropDownList("UAEExperience", new List<SelectListItem>
                                 {
                                    new SelectListItem{ Text="-Select Option-", Value = "" },
-                                   new SelectListItem{ Text="Fresher", Value = "Fresher" },
+                                   new SelectListItem{ Text="Fresher", Value = "0" },
                                    new SelectListItem{ Text="< 1 Years", Value = "< 1 Years" },
                                    new SelectListItem{ Text="1-2 Years", Value = "1-2 Years" },
                                    new SelectListItem{ Text="2-3 Years", Value = "2-3 Years" },
@@ -229,7 +230,7 @@
                                    new SelectListItem{ Text="30-35 Years", Value = "30-35 Years" },
                                    new SelectListItem{ Text="35-40 Years", Value = "35-40 Years" },
                                    new SelectListItem{ Text="40 Years <", Value = "35-40 Years <" },
-                                }, new { @class = "form-control forminput-theme" })
+                                }, new { @class = "form-control selectpicker forminput-theme" })
                                 @Html.ValidationMessageFor(model => model.UAEExperience, "", new { @class = "errorValidation" })
                             </div>
                         </div>
@@ -245,7 +246,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Current Location <span style="color:red"> *</span></label>
-                                @Html.DropDownListFor(model => model.CurrentLocation, ViewBag.CurrentLocation as SelectList, "Select One", new { @class = "form-control forminput-theme" })
+                                @Html.DropDownListFor(model => model.CurrentLocation, ViewBag.CurrentLocation as SelectList, "Select One", new { @class = "form-control selectpicker forminput-theme" })
                                 @Html.ValidationMessageFor(model => model.CurrentLocation, "", new { @class = "errorValidation" })
                             </div>
                         </div>
@@ -409,5 +410,9 @@
         $('#UploadCover').hide();
         $('#writeCover').show();
     }
-    
+    function SelectedIndexChanged() {
+        debugger
+        var selectedText = $("#JobPosition option:selected").text();
+        $("#JobTitle").val(selectedText);
+    }
 </script>

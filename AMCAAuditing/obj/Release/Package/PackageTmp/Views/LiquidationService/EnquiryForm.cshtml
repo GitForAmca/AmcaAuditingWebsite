@@ -50,10 +50,16 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
+        @*<div class="col-md-6">
             <div class="form-group">
                 @Html.DropDownListFor(model => model.Service, ViewBag.Service as SelectList, "Select Services", new { @class = "form-control forminput-theme" })
                 @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
+            </div>
+        </div>*@
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.DropDownListFor(model => model.SubServiceId, ViewBag.LiqSubServices as SelectList, "Select Sub Services", new { @class = "form-control forminput-theme" })
+                @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
             </div>
         </div>
         <div class="col-md-6">

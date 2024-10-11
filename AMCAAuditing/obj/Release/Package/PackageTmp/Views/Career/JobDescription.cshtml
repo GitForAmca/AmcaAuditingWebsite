@@ -35,7 +35,12 @@
     <div class="row padding-section">
         <div class="container">
             <div class="col-md-12">
+                <h3>Overview</h3>
                 @Html.Raw(@Model.JobContent)
+                <h3>Responsibilities</h3>
+                @Html.Raw(@Model.JobResponsibility)
+                <h3>Requirements</h3>
+                @Html.Raw(@Model.JobRequirements)
                 @using (Html.BeginForm("SubmitJob", "ExperiencedCareerRoles", FormMethod.Post, new { @class = "" }))
                 {
                     @Html.HiddenFor(model => model.JobTitle, new { @class = "form-control forminput-theme", @readonly = "readonly", @ViewBag.Value })

@@ -100,11 +100,19 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            @Html.DropDownListFor(model => model.Service, ViewBag.ServiceList as SelectList, "Select Services", new { @class = "form-control forminput-theme" })
+                                            @*@Html.DropDownListFor(model => model.Service, ViewBag.ServiceList as SelectList, "Select Services", new { @class = "form-control forminput-theme" })*@
+                                            @Html.DropDownListFor(model => model.Service, ViewBag.CommonServices as SelectList, "Select Services", new { @class = "form-control forminput-theme", id = "serviceId" })
                                             @Html.ValidationMessageFor(model => model.Service, "", new { @class = "errorValidation" })
                                         </div>
                                     </div>
+
                                     <div class="col-md-6">
+                                        <div class="form-group">
+                                            @Html.DropDownListFor(model => model.SubServiceId, new SelectList(""), "Select Sub Service", new { @class = "form-control forminput-theme", id = "subServiceId" })
+                                            @Html.ValidationMessageFor(model => model.SubServiceId, "", new { @class = "errorValidation" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             @Html.DropDownListFor(model => model.TradeLicenseAuthority, ViewBag.TradeLicenseAutList as SelectList, "Select Authority", new { @class = "form-control forminput-theme search-SelectList" })
                                             @Html.ValidationMessageFor(model => model.TradeLicenseAuthority, "", new { @class = "errorValidation" })
@@ -179,6 +187,20 @@
         debugger
         history.pushState("", document.title, window.location.origin + "/@Model.pageUrlText");
     })
+
+
+    $(document).ready(function () {
+        $("#serviceId").change(function () {
+            $.get("/Pages/GetSubServices", { Id: $("#serviceId").val() }, function (data) {
+                var jsondata = JSON.parse(data);
+                $("#subServiceId").empty();
+                $("#subServiceId").append("<option value=''>Select Sub Service</option>");
+                $.each(jsondata, function (index, row) {
+                    $("#subServiceId").append("<option value='" + row.Id + "'>" + row.Name + "</option>");
+                });
+            });
+        })
+    });
 
 </script>
 
