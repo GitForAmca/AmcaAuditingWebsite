@@ -57,9 +57,11 @@ namespace AMCAAuditing.Controllers
         [NonAction]
         public string SendMail(string FromMailID, string fromEmailPassword, string ToMailID, string CC, string BCC, string subject, string body, string servername, int PortNo, bool ssl)
         {
-            servername = "smtp-relay.sendinblue.com"; PortNo = 587; ssl = false; FromMailID = "notification@amca.ae"; fromEmailPassword = "4J7UwO5p2VDzG8Nq";
+            //servername = "smtp-relay.sendinblue.com"; PortNo = 587; ssl = false; FromMailID = "notification@amca.ae"; fromEmailPassword = "4J7UwO5p2VDzG8Nq";
 
             string msg = string.Empty;
+            DataTable dtg = GetGeneralSender(1); // 1 is company id
+            servername = "smtp.office365.com"; PortNo = 587; ssl = true; FromMailID = dtg.Rows[0]["SenderEmail"].ToString(); fromEmailPassword = dtg.Rows[0]["SenderPassword"].ToString();
             MailMessage MailMsg = new MailMessage();
             try
             {
@@ -110,6 +112,14 @@ namespace AMCAAuditing.Controllers
                 msg = ex.Message;
             }
             return msg;
+        }
+        public DataTable GetGeneralSender(int companyid)
+        {
+            ServiceModel PL = new ServiceModel();
+            PL.OpCode = 69;
+            PL.AutoId = companyid;
+            ServiceModelD.returnTable(PL);
+            return PL.dt;
         }
         [HttpPost]
         public ActionResult ServicesQuery(string LeadDataType, string AutoId, string CompanyName, string TradeLicenseAuthority, string ConcernPerson, string CountryCodeContact, string ContactNumber, string EmailId, string Service, string AboutAMCA, Validation model)
