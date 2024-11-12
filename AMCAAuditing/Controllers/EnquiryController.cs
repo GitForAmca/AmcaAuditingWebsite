@@ -141,6 +141,8 @@ namespace AMCAAuditing.Controllers
                 PL.LeadDataType = LeadDataType;
                 ServiceModelD.returnTable(PL);
 
+                string serviceName = PL.dt.Rows[0]["ServiceName"].ToString();
+
                 //Sending Mail
                 var body = "";
                 body += "<p style='margin-top: 0px'>Dear AMCA Marketing Team,</p>";
@@ -151,7 +153,7 @@ namespace AMCAAuditing.Controllers
                     "<tr> <td> <strong> Trade License Authority </strong></td> <td>" + TradeLicenseAuthority + " </td></tr>" +
                     "<tr> <td> <strong> Contact Number/s </strong></td> <td>" + CountryCodeContact + " " + ContactNumber + " </td></tr>" +
                     "<tr> <td> <strong> Email Id </strong></td> <td>" + EmailId + " </td></tr> " +
-                    "<tr> <td> <strong> Service </strong></td> <td>" + Service + " </td></tr>" +
+                    "<tr> <td> <strong> Service </strong></td> <td>" + serviceName + " </td></tr>" +
                     "<tr> <td> <strong> Where did you hear about AMCA? </strong></td> <td>" + AboutAMCA + " </td></tr>" +
                     "</table>";
                 body += "<p>Regards,<br>AMCA</p>";
