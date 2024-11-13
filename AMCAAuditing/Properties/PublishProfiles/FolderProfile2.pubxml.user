@@ -5,15 +5,15 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>Z:\F\AMCA\Publish Projects\AuditingWebsite</_PublishTargetUrl>
-    <History>True|2024-10-10T11:23:32.8191032Z;True|2024-10-10T15:19:18.4667927+04:00;</History>
+    <History>True|2024-11-13T06:41:39.9668965Z;True|2024-11-11T17:11:19.2162094+04:00;True|2024-10-10T15:23:32.8191032+04:00;True|2024-10-10T15:19:18.4667927+04:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/AMCAAuditing.dll">
-      <publishTime>10/10/2024 15:23:32</publishTime>
+      <publishTime>11/13/2024 10:41:39</publishTime>
     </File>
     <File Include="bin/AMCAAuditing.pdb">
-      <publishTime>10/10/2024 15:23:32</publishTime>
+      <publishTime>11/13/2024 10:41:39</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>07/24/2024 09:28:04</publishTime>
@@ -799,16 +799,16 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/24/2024 09:28:04</publishTime>
     </File>
     <File Include="Views/Pages/ContactUs.cshtml">
-      <publishTime>07/24/2024 09:28:04</publishTime>
+      <publishTime>11/11/2024 17:10:53</publishTime>
     </File>
     <File Include="Views/Pages/Index.cshtml">
-      <publishTime>07/24/2024 09:28:04</publishTime>
+      <publishTime>11/11/2024 17:10:53</publishTime>
     </File>
     <File Include="Views/Pages/Industries.cshtml">
       <publishTime>07/24/2024 09:28:04</publishTime>
     </File>
     <File Include="Views/Pages/TermsandConditions.cshtml">
-      <publishTime>07/24/2024 09:28:04</publishTime>
+      <publishTime>11/11/2024 17:10:53</publishTime>
     </File>
     <File Include="Views/Pages/Thankyou.cshtml">
       <publishTime>07/24/2024 09:28:04</publishTime>
@@ -835,7 +835,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/24/2024 09:28:04</publishTime>
     </File>
     <File Include="Views/Services/ExciseTaxServices.cshtml">
-      <publishTime>10/10/2024 15:16:49</publishTime>
+      <publishTime>10/11/2024 19:09:18</publishTime>
     </File>
     <File Include="Views/Services/Liquidation.cshtml">
       <publishTime>10/10/2024 15:16:49</publishTime>
@@ -853,7 +853,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/24/2024 09:28:04</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>10/10/2024 15:16:49</publishTime>
+      <publishTime>11/11/2024 17:10:53</publishTime>
     </File>
     <File Include="Views/Shared/_ThankyouLayout.cshtml">
       <publishTime>07/24/2024 09:28:04</publishTime>
