@@ -246,7 +246,7 @@ public class VatConsultingServiceController : Controller
             {
 
                 ServiceModel PL = new ServiceModel();
-                PL.OpCode = 5;
+                PL.OpCode = 70;
                 PL.AutoId = Convert.ToInt32(AutoId);
                 PL.CompanyName = CompanyName;
                 PL.TradeLicenseAuthority = TradeLicenseAuthority;
