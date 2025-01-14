@@ -224,7 +224,7 @@ namespace AMCAAuditing.Controllers
                     PL.CountryCodeContact = CountryCodeContact;
                     PL.ContactNumber = ContactNumber;
                     PL.EmailId = EmailId;
-                    //PL.Service = Service;
+                    PL.Service = Service;
                     PL.AboutAMCA = AboutAMCA;
                     PL.LeadDataType = LeadDataType;
                     PL.ServiceType = SubServiceId;
