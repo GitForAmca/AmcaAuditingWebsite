@@ -16,9 +16,11 @@ namespace AMCAAuditing.Controllers
     public class LiquidationServiceController : Controller
     {
         [NonAction]
-        public string SendMail(string FromMailID, string fromEmailPassword, string ToMailID, string CC, string BCC, string subject, string body, string servername, int PortNo, bool ssl)
+        public string SendMail(string ToMailID, string CC, string BCC, string subject, string body)
         {
-            //servername = "smtp-relay.sendinblue.com"; PortNo = 587; ssl = false; FromMailID = "notification@amca.ae"; fromEmailPassword = "4J7UwO5p2VDzG8Nq";
+            string servername = "", FromMailID = "", fromEmailPassword = "";
+            int PortNo = 0;
+            bool ssl;
 
             string msg = string.Empty; 
             DataTable dtg = GetGeneralSender(1); // 1 is company id
@@ -225,7 +227,7 @@ namespace AMCAAuditing.Controllers
                     "</table>";
                 body += "<p>Regards,<br>AMCA</p>";
 
-                var msg = SendMail("notification@amca.ae", "4J7UwO5p2VDzG8Nq", "crm@amcaauditing.com", "mohammad@amcaauditing.com,md@amcaauditing.com", "", "Assign Lead to BD", body, "smtp-relay.sendinblue.com", 587, true);
+                var msg = SendMail("cs3@amca.ae", "", "", "Assign Lead to BD", body);
                 //var msg = "";
                 return RedirectToAction("Thankyou", "Pages");
 

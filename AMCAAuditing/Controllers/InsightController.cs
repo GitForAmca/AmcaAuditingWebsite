@@ -15,64 +15,66 @@ namespace AMCAAuditing.Controllers
     public class InsightController : Controller
     {
         
-            [NonAction]
-            public string SendMail(string FromMailID, string fromEmailPassword, string ToMailID, string CC, string BCC, string subject, string body, string servername, int PortNo, bool ssl)
+        [NonAction]
+        public string SendMail(string ToMailID, string CC, string BCC, string subject, string body)
+        {
+            string servername = "", FromMailID = "", fromEmailPassword = "";
+            int PortNo = 0;
+            bool ssl;
+
+            string msg = string.Empty;
+            DataTable dtg = GetGeneralSender(1); // 1 is company id
+            servername = "smtp.office365.com"; PortNo = 587; ssl = true; FromMailID = dtg.Rows[0]["SenderEmail"].ToString(); fromEmailPassword = dtg.Rows[0]["SenderPassword"].ToString();
+            MailMessage MailMsg = new MailMessage();
+            try
             {
-               // servername = "smtp-relay.sendinblue.com"; PortNo = 587; ssl = false; FromMailID = "notification@amca.ae"; fromEmailPassword = "4J7UwO5p2VDzG8Nq";
-
-                string msg = string.Empty; 
-                DataTable dtg = GetGeneralSender(1); // 1 is company id
-                servername = "smtp.office365.com"; PortNo = 587; ssl = true; FromMailID = dtg.Rows[0]["SenderEmail"].ToString(); fromEmailPassword = dtg.Rows[0]["SenderPassword"].ToString();
-                MailMessage MailMsg = new MailMessage();
-                try
+                if (ToMailID.EndsWith(","))
                 {
-                    if (ToMailID.EndsWith(","))
-                    {
-                        ToMailID = ToMailID.Substring(0, ToMailID.Length - 1);
-                    }
-                    if (CC.EndsWith(","))
-                    {
-                        CC = CC.Substring(0, CC.Length - 1);
-
-                    }
-                    if (BCC.EndsWith(","))
-                    {
-                        BCC = BCC.Substring(0, BCC.Length - 1);
-
-                    }
-
-                    MailMsg.To.Add(ToMailID);
-                    if (CC != "")
-                    {
-                        MailMsg.CC.Add(CC);
-                    }
-                    if (BCC != "")
-                    {
-                        MailMsg.Bcc.Add(BCC);
-                    }
-
-                    //=================
-                    MailMsg.From = new MailAddress(FromMailID);
-                    MailMsg.Subject = subject;
-                    MailMsg.IsBodyHtml = true;
-                    MailMsg.Body = body;
-
-                    SmtpClient tempsmtp = new SmtpClient();
-                    tempsmtp.Host = servername;
-                    tempsmtp.Port = PortNo;
-                    tempsmtp.Credentials = new System.Net.NetworkCredential(FromMailID, fromEmailPassword);
-                    tempsmtp.EnableSsl = ssl;
-
-                    tempsmtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-
-                    tempsmtp.Send(MailMsg);
-                    msg = "Successful";
+                    ToMailID = ToMailID.Substring(0, ToMailID.Length - 1);
                 }
-                catch (Exception ex)
+                if (CC.EndsWith(","))
                 {
-                    msg = ex.Message;
+                    CC = CC.Substring(0, CC.Length - 1);
+
                 }
-                return msg;
+                if (BCC.EndsWith(","))
+                {
+                    BCC = BCC.Substring(0, BCC.Length - 1);
+
+                }
+
+                MailMsg.To.Add(ToMailID);
+                if (CC != "")
+                {
+                    MailMsg.CC.Add(CC);
+                }
+                if (BCC != "")
+                {
+                    MailMsg.Bcc.Add(BCC);
+                }
+
+                //=================
+                MailMsg.From = new MailAddress(FromMailID);
+                MailMsg.Subject = subject;
+                MailMsg.IsBodyHtml = true;
+                MailMsg.Body = body;
+
+                SmtpClient tempsmtp = new SmtpClient();
+                tempsmtp.Host = servername;
+                tempsmtp.Port = PortNo;
+                tempsmtp.Credentials = new System.Net.NetworkCredential(FromMailID, fromEmailPassword);
+                tempsmtp.EnableSsl = ssl;
+
+                tempsmtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                tempsmtp.Send(MailMsg);
+                msg = "Successful";
+            }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
+            return msg;
         }
         public DataTable GetGeneralSender(int companyid)
         {
@@ -249,7 +251,8 @@ namespace AMCAAuditing.Controllers
                         "</table>";
                     body += "<p>Regards,<br>AMCA</p>";
 
-                    var msg = SendMail("notification@amca.ae", "4J7UwO5p2VDzG8Nq", "crm@amcaauditing.com", "mohammad@amcaauditing.com,md@amcaauditing.com", "", "Assign Lead to BD", body, "smtp-relay.sendinblue.com", 587, true);
+
+                    var msg = SendMail("cs3@amca.ae", "", "", "Assign Lead to BD", body);
                     //var msg = ""; 
                     return RedirectToAction("Thankyou", "Pages");
 
