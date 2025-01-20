@@ -356,7 +356,7 @@ namespace AMCAAuditing.Controllers
                     "</table>";
                 body += "<p>Regards,<br>AMCA</p>";
 
-                var msg = SendMail("cs3@amca.ae", "", "", "Assign Lead to BD", body);
+                var msg = SendMail("crm@amca.ae", "", "", "Assign Lead to BD", body);
                //var msg = "";
                 if(txtPageName.ToString() == "AuditAssurance")
                 {

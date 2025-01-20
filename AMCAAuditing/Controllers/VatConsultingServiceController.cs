@@ -281,7 +281,7 @@ public class VatConsultingServiceController : Controller
                     "</table>";
                 body += "<p>Regards,<br>AMCA</p>"; 
 
-                var msg = SendMail("cs3@amca.ae", "", "", "Assign Lead to BD", body);
+                var msg = SendMail("crm@amca.ae", "", "", "Assign Lead to BD", body);
                 //var msg = "";
                 return RedirectToAction("Thankyou", "Pages");
 
