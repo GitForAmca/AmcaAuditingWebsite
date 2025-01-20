@@ -279,9 +279,9 @@ public class VatConsultingServiceController : Controller
                     "<tr> <td> <strong> Where did you hear about AMCA? </strong></td> <td>" + AboutAMCA + " </td></tr>" +
                     "<tr> <td> <strong> AMCAAUDITING: </strong></td> <td>" + txtPageName + " </td></tr>" +
                     "</table>";
-                body += "<p>Regards,<br>AMCA</p>"; 
-
-                var msg = SendMail("crm@amca.ae", "", "", "Assign Lead to BD", body);
+                body += "<p>Regards,<br>AMCA</p>";
+                var toMail = new clsgeneral().getDepartmentReceiver(43);
+                var msg = SendMail(toMail, "", "", "Assign Lead to BD", body);
                 //var msg = "";
                 return RedirectToAction("Thankyou", "Pages");
 

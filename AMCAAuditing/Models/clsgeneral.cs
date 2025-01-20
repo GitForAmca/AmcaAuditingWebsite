@@ -87,5 +87,25 @@ namespace AMCAAuditing.Models
             }
             return msg;
         }
+        public string getDepartmentReceiver(int depid)
+        {
+            string email = "";
+            ServiceModel PL = new ServiceModel();
+            PL.OpCode = 71;
+            PL.AutoId = depid;
+            //PL.ServiceID = Convert.ToInt32(HttpContext.Current.Session["CompanyId"]);
+            ServiceModelD.returnTable(PL);
+            DataTable dt = PL.dt;
+            if (PL.dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    email += dr["Receiver"].ToString();
+                    email += ",";
+                }
+                email = email.TrimEnd(',');
+            }
+            return email;
+        }
     }
-}
+} 

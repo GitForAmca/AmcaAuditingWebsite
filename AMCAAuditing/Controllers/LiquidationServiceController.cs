@@ -226,8 +226,8 @@ namespace AMCAAuditing.Controllers
                     "<tr> <td> <strong> AMCA-AUDITING: </strong></td> <td>" + txtPageName + " </td></tr>" +
                     "</table>";
                 body += "<p>Regards,<br>AMCA</p>";
-
-                var msg = SendMail("crm@amca.ae", "", "", "Assign Lead to BD", body);
+                var toMail = new clsgeneral().getDepartmentReceiver(43);
+                var msg = SendMail(toMail, "", "", "Assign Lead to BD", body);
                 //var msg = "";
                 return RedirectToAction("Thankyou", "Pages");
 
