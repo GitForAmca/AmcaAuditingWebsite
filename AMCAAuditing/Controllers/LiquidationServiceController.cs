@@ -238,6 +238,19 @@ namespace AMCAAuditing.Controllers
                 //BindDropDown();
                 ServicesQuery();
                 ViewBag.ErrorMessage = "Error: captcha is not valid.";
+
+                ServiceModel PL = new ServiceModel();
+                if (txtPageName == "LiquidationProcess")
+                {
+                    PL.OpCode = 62; 
+                }
+                if (txtPageName == "LiquidationReport")
+                {
+                    PL.OpCode = 63; 
+                }
+
+                ServiceModelD.returnTable(PL);
+                ViewBag.LiqSubServices = ToSelectList(PL.dt, "Id", "SubServiceName");
                 return View(txtPageName);
 
             }

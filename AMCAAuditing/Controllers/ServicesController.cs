@@ -373,6 +373,43 @@ namespace AMCAAuditing.Controllers
                // BindDropDown();
                 ServicesQuery();
                 ViewBag.ErrorMessage = "Error: captcha is not valid.";
+
+                ServiceModel PL = new ServiceModel();
+                if (txtPageName == "AuditAssurance")
+                { 
+                    PL.OpCode = 40; 
+                }
+                if (txtPageName == "AccountingBookkeeping")
+                {
+                    PL.OpCode = 46;
+                }
+                if (txtPageName == "VatConsulting")
+                {
+                    PL.OpCode = 47;
+                }
+                if (txtPageName == "Liquidation")
+                {
+                    PL.OpCode = 49;
+                }
+                if (txtPageName == "CorporateTaxServices")
+                {
+                    PL.OpCode = 50;
+                }
+                if (txtPageName == "AccountingBookkeeping")
+                {
+                    PL.OpCode = 46;
+                }
+                if (txtPageName == "TRC")
+                {
+                    PL.OpCode = 48;
+                }
+                if (txtPageName == "ExciseTaxServices")
+                {
+                    PL.OpCode = 68;
+                }
+
+                ServiceModelD.returnTable(PL);
+                ViewBag.AuditAsssuranceSubServices = ToSelectList(PL.dt, "Id", "SubServiceName");
                 return View(txtPageName);
 
             }

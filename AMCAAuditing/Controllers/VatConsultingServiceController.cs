@@ -292,6 +292,35 @@ public class VatConsultingServiceController : Controller
                 // BindDropDown();
                 ServicesQuery();
                 ViewBag.ErrorMessage = "Error: captcha is not valid.";
+
+                ServiceModel PL = new ServiceModel();
+                if (txtPageName == "VatRegitration")
+                {
+                    PL.OpCode = 55;
+                }
+                if (txtPageName == "ReturnFiling")
+                {
+                    PL.OpCode = 56;
+                }
+                if (txtPageName == "Reconsideration")
+                {
+                    PL.OpCode = 57;
+                }
+                if (txtPageName == "TrainingAdvisory")
+                {
+                    PL.OpCode = 67;
+                }
+                if (txtPageName == "Amendment")
+                {
+                    PL.OpCode = 58;
+                }
+                if (txtPageName == "DeRegistration")
+                {
+                    PL.OpCode = 59;
+                }
+
+                ServiceModelD.returnTable(PL);
+                ViewBag.VatConsultingSubServices = ToSelectList(PL.dt, "Id", "SubServiceName");
                 return View(txtPageName);
 
             }

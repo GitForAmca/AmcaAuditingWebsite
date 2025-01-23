@@ -260,6 +260,22 @@ namespace AMCAAuditing.Controllers
                 //BindDropDown();
                 ServicesQuery();
                 ViewBag.ErrorMessage = "Error: captcha is not valid.";
+
+                ServiceModel PL = new ServiceModel();
+                if (txtPageName == "TRCforNaturalPerson")
+                {
+                    PL.OpCode = 61;
+                    Session["txtPageName"] = "TRCforNaturalPerson";
+                }
+                if (txtPageName == "TRCforLegalPerson")
+                {
+                    PL.OpCode = 60;
+                    Session["txtPageName"] = "TRCforLegalPerson";
+                }
+
+                ServiceModelD.returnTable(PL);
+                ViewBag.TRC_SubServices = ToSelectList(PL.dt, "Id", "SubServiceName");
+
                 return View(txtPageName);
 
             }

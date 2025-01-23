@@ -276,6 +276,37 @@ namespace AMCAAuditing.Controllers
                 //BindDropDown();
                 ServicesQuery();
                 ViewBag.ErrorMessage = "Error: captcha is not valid.";
+
+                ServiceModel PL = new ServiceModel();
+                if (txtPageName == "Accounting")
+                {
+                    PL.OpCode = 51;
+
+                }
+                if (txtPageName == "Bookkeeping")
+                {
+                    PL.OpCode = 51;
+
+                }
+                if (txtPageName == "AccountingReview")
+                {
+                    PL.OpCode = 52;
+
+                }
+                if (txtPageName == "BacklogAccounting")
+                {
+
+                    PL.OpCode = 53;
+                }
+                if (txtPageName == "AccountingSupervision")
+                {
+                    ;
+                    PL.OpCode = 54;
+                }
+
+                ServiceModelD.returnTable(PL);
+                ViewBag.AccountingBookkeepingSubServices = ToSelectList(PL.dt, "Id", "SubServiceName");
+
                 return View(txtPageName);
 
             }
