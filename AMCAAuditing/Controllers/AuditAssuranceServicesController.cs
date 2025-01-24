@@ -259,8 +259,8 @@ namespace AMCAAuditing.Controllers
                     "<tr> <td> <strong> AMCAAUDITING: </strong></td> <td>" + txtPageName + " </td></tr>" +
                     "</table>";
                 body += "<p>Regards,<br>AMCA</p>";
-
-                var msg = SendMail("cs3@amca.ae", "", "", "Assign Lead to BD", body);
+                var toMail = new clsgeneral().getDepartmentReceiver(43);
+                var msg = SendMail(toMail, "", "", "Assign Lead to BD", body);
                 //var msg = "";
                 // return RedirectToAction("Thankyou", "Pages");
                 return RedirectToAction("ThankyouAudit", "Pages");
@@ -271,6 +271,36 @@ namespace AMCAAuditing.Controllers
                 var txtPageName = Session["txtPageName"].ToString();
                 ServicesQuery();
                 ViewBag.ErrorMessage = "Error: captcha is not valid.";
+
+                ServiceModel PL = new ServiceModel();
+                if (txtPageName == "ExternalAudit")
+                {
+                    PL.OpCode = 42;
+
+                }
+                if (txtPageName == "InterimAudit")
+                {
+                    PL.OpCode = 45;
+
+                }
+                if (txtPageName == "InternalAudit")
+                {
+                    PL.OpCode = 41;
+
+                }
+                if (txtPageName == "RevenueAudit")
+                {
+
+                    PL.OpCode = 44;
+                }
+                if (txtPageName == "TaxAudit")
+                {
+                    ;
+                    PL.OpCode = 43;
+                }
+
+                ServiceModelD.returnTable(PL);
+                ViewBag.InternalAuditSubServices = ToSelectList(PL.dt, "Id", "SubServiceName");
                 return View(txtPageName);
 
             }

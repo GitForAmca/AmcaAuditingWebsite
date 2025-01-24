@@ -248,8 +248,8 @@ namespace AMCAAuditing.Controllers
                     "<tr> <td> <strong> AMCAAUDITING: </strong></td> <td>" + txtPageName + " </td></tr>" +
                     "</table>";
                 body += "<p>Regards,<br>AMCA</p>";
-
-                var msg = SendMail("cs3@amca.ae", "", "", "Assign Lead to BD", body);
+                var toMail = new clsgeneral().getDepartmentReceiver(43);
+                var msg = SendMail(toMail, "", "", "Assign Lead to BD", body);
                 //var msg = "";
                 return RedirectToAction("Thankyou", "Pages");
 
@@ -260,6 +260,22 @@ namespace AMCAAuditing.Controllers
                 //BindDropDown();
                 ServicesQuery();
                 ViewBag.ErrorMessage = "Error: captcha is not valid.";
+
+                ServiceModel PL = new ServiceModel();
+                if (txtPageName == "TRCforNaturalPerson")
+                {
+                    PL.OpCode = 61;
+                    Session["txtPageName"] = "TRCforNaturalPerson";
+                }
+                if (txtPageName == "TRCforLegalPerson")
+                {
+                    PL.OpCode = 60;
+                    Session["txtPageName"] = "TRCforLegalPerson";
+                }
+
+                ServiceModelD.returnTable(PL);
+                ViewBag.TRC_SubServices = ToSelectList(PL.dt, "Id", "SubServiceName");
+
                 return View(txtPageName);
 
             }
