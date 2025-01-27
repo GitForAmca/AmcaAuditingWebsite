@@ -223,7 +223,7 @@ namespace AMCAAuditing.Controllers
             Session["txtPageName"] = "AccountingSupervision";
             return ServicesQuery();
         }
-        [Route("crypto-accounting")]
+        [Route("crypto-accounting-services")]
         public ActionResult CryptoAccounting()
         {
             ServiceModel PL = new ServiceModel();
