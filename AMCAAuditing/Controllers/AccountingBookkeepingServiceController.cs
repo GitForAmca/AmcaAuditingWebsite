@@ -223,6 +223,17 @@ namespace AMCAAuditing.Controllers
             Session["txtPageName"] = "AccountingSupervision";
             return ServicesQuery();
         }
+        [Route("crypto-accounting")]
+        public ActionResult CryptoAccounting()
+        {
+            ServiceModel PL = new ServiceModel();
+            PL.OpCode = 72;
+            ServiceModelD.returnTable(PL);
+            ViewBag.AccountingBookkeepingSubServices = ToSelectList(PL.dt, "Id", "SubServiceName");
+
+            Session["txtPageName"] = "CryptoAccounting";
+            return ServicesQuery();
+        }
 
         [HttpPost]
         public ActionResult ServicesQuery(string LeadDataType, string AutoId, string CompanyName, string TradeLicenseAuthority, string ConcernPerson, string CountryCodeContact, string ContactNumber, string EmailId, string Service, string AboutAMCA, Validation model , string SubServiceId)
@@ -281,27 +292,26 @@ namespace AMCAAuditing.Controllers
                 if (txtPageName == "Accounting")
                 {
                     PL.OpCode = 51;
-
                 }
                 if (txtPageName == "Bookkeeping")
                 {
                     PL.OpCode = 51;
-
                 }
                 if (txtPageName == "AccountingReview")
                 {
                     PL.OpCode = 52;
-
                 }
                 if (txtPageName == "BacklogAccounting")
                 {
-
                     PL.OpCode = 53;
                 }
                 if (txtPageName == "AccountingSupervision")
-                {
-                    ;
+                { 
                     PL.OpCode = 54;
+                }
+                if (txtPageName == "CryptoAccounting")
+                { 
+                    PL.OpCode = 72;
                 }
 
                 ServiceModelD.returnTable(PL);
