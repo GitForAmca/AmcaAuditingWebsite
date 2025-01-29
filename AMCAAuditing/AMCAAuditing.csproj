@@ -396,6 +396,7 @@
     <Content Include="Views\Pages\TermsandConditions.cshtml" />
     <Content Include="Views\Services\ExciseTaxServices.cshtml" />
     <Content Include="Views\Sidebar\ExciseTaxSidebar.cshtml" />
+    <Content Include="Views\AccountingBookkeepingService\CryptoAccounting.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
