@@ -117,7 +117,7 @@ public class VatConsultingServiceController : Controller
             //Select About AMCA
             PL.OpCode = 4;
             ServiceModelD.returnTable(PL);
-            ViewBag.AboutAMCA = ToSelectList(PL.dt, "AboutAMCA", "AboutAMCA");
+            ViewBag.AboutAMCA = ToSelectList(PL.dt, "AutoId", "AboutAMCA");
 
             string AccountingBookkeeping = "10";
             PL.OpCode = 3;
