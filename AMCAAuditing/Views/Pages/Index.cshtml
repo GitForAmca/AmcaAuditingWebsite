@@ -10,6 +10,109 @@
     IEnumerable<AMCAAuditing.Models.InsightModel> insightModel = ViewData["IndexInsight"] as IEnumerable<AMCAAuditing.Models.InsightModel>;
 }
 @model AMCAAuditing.Models.Validation
+
+<link href="~/Content/Gallery.css" rel="stylesheet" />
+
+<style>
+    .photos-grid-container {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 0;
+        align-items: start;
+    }
+
+    @@media (max-width: 580px) {
+        .photos-grid-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .photos-grid-container .img-box {
+        border: 1px solid #ffffff;
+        position: relative;
+    }
+
+        .photos-grid-container .img-box:hover .transparent-box {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .photos-grid-container .img-box:hover .caption {
+            transform: translateY(-5px);
+        }
+
+    .photos-grid-container img {
+        max-width: 100%;
+        display: block;
+        height: auto;
+    }
+
+    .photos-grid-container .caption {
+        color: white;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        font-size: 1.5rem;
+    }
+
+    .photos-grid-container .transparent-box {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: background-color 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .photos-grid-container .main-photo {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .photos-grid-container .sub {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 0em;
+    }
+
+        .photos-grid-container .sub:nth-child(0) {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .photos-grid-container .sub:nth-child(1) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .photos-grid-container .sub:nth-child(2) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .photos-grid-container .sub:nth-child(3) {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+    .hide-element {
+        border: 0;
+        clip: rect(1px 1px 1px 1px);
+        /* IE6, IE7 */
+        clip: rect(1px, 1px, 1px, 1px);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+</style>
+
 <section>
     <div class="row main-slider">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -63,8 +166,8 @@
         </div>
     </div>
     @*<div class="nationalDay">
-        <img class="" width="300" src="../../img/uae-national-day.svg">
-    </div>*@
+            <img class="" width="300" src="../../img/uae-national-day.svg">
+        </div>*@
 </section>
 <section>
     <div class="row about padding-section">
@@ -627,6 +730,95 @@
     </div>
 </section>
 <section>
+    <div class="row form-wrapper" id="requestWrapper">
+        <div class="container">
+            <div class="row Mtop-30">
+                <p class="tagline"><span>Gallery</span></p>
+                <div class="col-md-12">
+                    <p>
+                        Explore our Gallery, a visual journey showcasing our achievements, events, and memorable moments.
+                        From team celebrations to client success stories, this collection reflects our dedication, creativity, and growth.
+                        Dive in and experience the vibrant spirit of AMCA!
+                    </p>
+                    <main>
+                        <div id="gallery" class="photos-grid-container gallery">
+                            <div class="main-photo img-box">
+                                <a href="~/AMCA_Gallery/1.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/1.jpg" alt="image" /></a>
+                            </div>
+                            <div>
+                                <div class="sub">
+                                    <div class="img-box"><a href="~/AMCA_Gallery/2.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/2.jpg" alt="image" /></a></div>
+                                    <div class="img-box"><a href="~/AMCA_Gallery/2.png" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/2.png" alt="image" /></a></div>
+                                    <div class="img-box"><a href="~/AMCA_Gallery/3.1.png" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/3.1.png" alt="image" /></a></div>
+                                    <div id="multi-link" class="img-box">
+                                        <a href="~/AMCA_Gallery/11.png" class="glightbox" data-glightbox="type: image">
+                                            <img src="~/AMCA_Gallery/11.png" alt="image" />
+                                            <div class="transparent-box">
+                                                <div class="caption">
+                                                    +20
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="more-img" class="extra-images-container hide-element">
+                                <a href="~/AMCA_Gallery/3.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/3.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/4.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/4.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/5.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/5.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/6.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/6.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/7.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/7.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/8.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/8.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/9.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/9.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/10.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/10.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/10.png" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/10.png" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/11.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/11.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/12.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/12.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/13.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/13.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/14.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/14.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/15.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/15.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/16.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/16.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/17.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/17.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/18.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/18.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/19.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/19.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/20.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/20.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/21.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/21.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/22.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/22.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/23.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/23.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/24.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/24.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/25.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/25.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/26.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/26.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/27.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/27.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/28.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/28.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/29.png" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/29.png" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/30.png" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/30.png" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/31.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/31.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/32.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/32.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/33.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/33.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/34.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/34.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/35.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/35.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/36.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/36.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/37.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/37.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/38.png" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/38.png" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/39.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/39.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/40.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/40.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/41.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/41.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/42.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/42.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/43.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/43.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/44.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/44.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/45.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/45.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/46.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/46.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/47.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/47.jpg" alt="image" /></a>
+                                <a href="~/AMCA_Gallery/48.jpg" class="glightbox" data-glightbox="type: image"><img src="~/AMCA_Gallery/48.jpg" alt="image" /></a>
+                            </div>
+                        </div>
+                    </main>
+                </div> <!-- end of col-md-12 -->
+            </div>
+        </div>
+    </div>
+</section>
+<section>
     <div class="row newsletter padding-section">
         <div class="container">
             <div class="col-md-12 about-company">
@@ -658,6 +850,17 @@
         </div>
     </div>
 </section>
+<script src="~/Scripts/gallery.js"></script>
+<script>
+
+    const lightbox = GLightbox({
+        touchNavigation: true,
+        loop: true,
+        width: "90vw",
+        height: "90vh"
+    });
+
+</script>
 <script type="text/javascript">
     $(document).ready(function () {
         history.pushState("", document.title, window.location.origin + "");
@@ -665,46 +868,46 @@
 </script>
 @*CELEBRATION*@
 @*<style>
-    #loaderCeleb {
-        position: fixed;
-        left: 0px;
-        top: 0px;
-        width: 100%;
-        height: 100%;
-        z-index: 9999;
-        background-color: #fff;
-        background: url('../../img/UAE_flag.gif') 50% 50% no-repeat rgb(249,249,249);
-    }
-
-    .content-celeb {
-        position: absolute;
-        top: 550px;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        padding: 15px;
-    }
-
-        .content-celeb span {
-            color: #c5951f
+        #loaderCeleb {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #fff;
+            background: url('../../img/UAE_flag.gif') 50% 50% no-repeat rgb(249,249,249);
         }
- 
 
-</style>
-<div id="loaderCeleb">
-    <div class="content-celeb">
-        <h3><span>AMCA</span> family would like to extend its warmest greetings!</h3>
-        <h2>UAE <span>NATIONAL DAY</span> 2022</h2>
+        .content-celeb {
+            position: absolute;
+            top: 550px;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding: 15px;
+        }
+
+            .content-celeb span {
+                color: #c5951f
+            }
+
+
+    </style>
+    <div id="loaderCeleb">
+        <div class="content-celeb">
+            <h3><span>AMCA</span> family would like to extend its warmest greetings!</h3>
+            <h2>UAE <span>NATIONAL DAY</span> 2022</h2>
+        </div>
     </div>
-</div>
 
- 
 
-<script>
-    $(document).ready(function () {
 
-        $('#loaderCeleb').fadeOut(5000);
-    });
+    <script>
+        $(document).ready(function () {
 
-</script>*@
+            $('#loaderCeleb').fadeOut(5000);
+        });
+
+    </script>*@
 @*CELEBRATION END*@
