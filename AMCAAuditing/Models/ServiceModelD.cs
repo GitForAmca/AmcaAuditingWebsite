@@ -34,6 +34,11 @@ namespace AMCAAuditing.Models
                 sqlCmd.Parameters.Add("@AboutAMCA", SqlDbType.VarChar).Value = PL.AboutAMCA;
                 sqlCmd.Parameters.Add("@MessageContact", SqlDbType.VarChar).Value = PL.MessageContact;
                 sqlCmd.Parameters.Add("@LeadDataType", SqlDbType.VarChar).Value = PL.LeadDataType;
+                sqlCmd.Parameters.Add("@UTMSource", SqlDbType.VarChar).Value = PL.UTMSource;
+                sqlCmd.Parameters.Add("@UTMMedium", SqlDbType.VarChar).Value = PL.UTMMedium;
+                sqlCmd.Parameters.Add("@UTMCampaign", SqlDbType.VarChar).Value = PL.UTMCampaign;
+                sqlCmd.Parameters.Add("@UTMTerm", SqlDbType.VarChar).Value = PL.UTMTerm;
+                sqlCmd.Parameters.Add("@UTMContent", SqlDbType.VarChar).Value = PL.UTMContent;
                 sqlCmd.Parameters.AddWithValue("websiteID", 2);
                 SqlDataAdapter sqlAdp = new SqlDataAdapter(sqlCmd);
                 PL.dt = new DataTable();

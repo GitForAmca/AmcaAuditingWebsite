@@ -16,6 +16,32 @@ namespace AMCAAuditing.Controllers
 
     public class TRCServiceController : Controller
     {
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            //Capture UTM Source
+            var query = Request.QueryString;
+            if (!string.IsNullOrEmpty(query["utm_source"]))
+            {
+                Session["utm_source"] = query["utm_source"];
+            }
+            if (!string.IsNullOrEmpty(query["utm_medium"]))
+            {
+                Session["utm_medium"] = query["utm_medium"];
+            }
+            if (!string.IsNullOrEmpty(query["utm_campaign"]))
+            {
+                Session["utm_campaign"] = query["utm_campaign"];
+            }
+            if (!string.IsNullOrEmpty(query["utm_term"]))
+            {
+                Session["utm_term"] = query["utm_term"];
+            }
+            if (!string.IsNullOrEmpty(query["utm_content"]))
+            {
+                Session["utm_content"] = query["utm_content"];
+            }
+            base.OnActionExecuting(filterContext);
+        }
         [NonAction]
         public string SendMail(string ToMailID, string CC, string BCC, string subject, string body)
         {
@@ -228,6 +254,11 @@ namespace AMCAAuditing.Controllers
                 PL.AboutAMCA = AboutAMCA;
                 PL.LeadDataType = LeadDataType;
                 PL.ServiceType = SubServiceId;
+                PL.UTMSource = Session["utm_source"] != null ? Session["utm_source"].ToString() : "";
+                PL.UTMMedium = Session["utm_medium"] != null ? Session["utm_medium"].ToString() : "";
+                PL.UTMCampaign = Session["utm_campaign"] != null ? Session["utm_campaign"].ToString() : "";
+                PL.UTMTerm = Session["utm_term"] != null ? Session["utm_term"].ToString() : "";
+                PL.UTMContent = Session["utm_content"] != null ? Session["utm_content"].ToString() : "";
                 var txtPageName = Session["txtPageName"].ToString();
                 ServiceModelD.returnTable(PL);
 

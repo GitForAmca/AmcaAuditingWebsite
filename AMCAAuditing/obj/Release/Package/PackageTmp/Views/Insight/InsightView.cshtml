@@ -173,6 +173,7 @@
 @Scripts.Render("~/bundles/jquery")
 <script type="text/javascript">
     $(document).ready(function () {
+        getSubservice();
         window.addEventListener('popstate', function (event) {
             location.reload();
         }, false);
@@ -189,6 +190,7 @@
     })
 
 
+    // Get subservice click on service dropdown
     $(document).ready(function () {
         $("#serviceId").change(function () {
             $.get("/Pages/GetSubServices", { Id: $("#serviceId").val() }, function (data) {
@@ -201,6 +203,18 @@
             });
         })
     });
+
+    // Get subservice automaticall after wrong capcha error
+    function getSubservice() {
+            $.get("/Pages/GetSubServices", { Id: $("#serviceId").val() }, function (data) {
+                var jsondata = JSON.parse(data);
+                $("#subServiceId").empty();
+                $("#subServiceId").append("<option value=''>Select Sub Service</option>");
+                $.each(jsondata, function (index, row) {
+                    $("#subServiceId").append("<option value='" + row.Id + "'>" + row.Name + "</option>");
+                });
+            }); 
+    }
 
 </script>
 

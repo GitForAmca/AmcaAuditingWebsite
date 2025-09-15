@@ -22,6 +22,12 @@ namespace AMCAAuditing.Models
         public string EmailId { get; set; }
         public string Service { get; set; }
         public string AboutAMCA { get; set; }
+        public string UTMSource { get; set; }
+        public string UTMMedium { get; set; }
+        public string UTMCampaign { get; set; }
+        public string UTMTerm { get; set; }
+        public string UTMContent { get; set; }
+
         public string MessageContact { get; set; }
         public string exceptionMessage { get; set; }
         public bool isException { get; set; }
