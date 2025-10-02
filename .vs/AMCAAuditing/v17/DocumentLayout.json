@@ -1,25 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAuditingWebsite\\",
+  "WorkspaceRootPath": "C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|d:\\mohd owais ansari\\git websites\\amcaauditingwebsite\\amcaauditing\\views\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|c:\\arif\\f\\amca\\git website\\amcaauditingwebsite\\amcaauditing\\content\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|solutionrelative:amcaauditing\\content\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|c:\\arif\\f\\amca\\git website\\amcaauditingwebsite\\amcaauditing\\views\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|solutionrelative:amcaauditing\\views\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|D:\\Mohd Owais Ansari\\Git Websites\\AmcaAuditingWebsite\\amcaauditing\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\amcaauditing\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|solutionrelative:amcaauditing\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|D:\\Mohd Owais Ansari\\Git Websites\\AmcaAuditingWebsite\\amcaauditing\\views\\accountingbookkeepingservice\\cryptoaccounting.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\amcaauditing\\views\\accountingbookkeepingservice\\cryptoaccounting.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|solutionrelative:amcaauditing\\views\\accountingbookkeepingservice\\cryptoaccounting.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|D:\\Mohd Owais Ansari\\Git Websites\\AmcaAuditingWebsite\\amcaauditing\\controllers\\pagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\amcaauditing\\controllers\\pagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|solutionrelative:amcaauditing\\controllers\\pagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|D:\\Mohd Owais Ansari\\Git Websites\\AmcaAuditingWebsite\\amcaauditing\\views\\career\\listalljobs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\amcaauditing\\views\\career\\listalljobs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{209AF57C-B1E1-42C1-B0EB-21F5898D0154}|AMCAAuditing\\AMCAAuditing.csproj|solutionrelative:amcaauditing\\views\\career\\listalljobs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -30,12 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 16,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -50,7 +50,51 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:140:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:139:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Bookmark",
@@ -58,11 +102,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "main.css",
+              "DocumentMoniker": "C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\AMCAAuditing\\Content\\main.css",
+              "RelativeDocumentMoniker": "AMCAAuditing\\Content\\main.css",
+              "ToolTip": "C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\AMCAAuditing\\Content\\main.css",
+              "RelativeToolTip": "AMCAAuditing\\Content\\main.css",
+              "ViewState": "AgIAAMYCAAAAAAAAAAAjwNYCAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-02T04:56:44.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Web.config",
-              "DocumentMoniker": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAuditingWebsite\\AMCAAuditing\\Web.config",
+              "DocumentMoniker": "C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\AMCAAuditing\\Web.config",
               "RelativeDocumentMoniker": "AMCAAuditing\\Web.config",
-              "ToolTip": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAuditingWebsite\\AMCAAuditing\\Web.config",
+              "ToolTip": "C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\AMCAAuditing\\Web.config",
               "RelativeToolTip": "AMCAAuditing\\Web.config",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAADsAAAC0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
@@ -71,11 +128,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAuditingWebsite\\AMCAAuditing\\Views\\Pages\\Index.cshtml",
+              "DocumentMoniker": "C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\AMCAAuditing\\Views\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "AMCAAuditing\\Views\\Pages\\Index.cshtml",
-              "ToolTip": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAuditingWebsite\\AMCAAuditing\\Views\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\AMCAAuditing\\Views\\Pages\\Index.cshtml",
               "RelativeToolTip": "AMCAAuditing\\Views\\Pages\\Index.cshtml",
               "ViewState": "AgIAAMACAAAAAAAAAAAUwJsCAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -84,11 +141,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CryptoAccounting.cshtml",
-              "DocumentMoniker": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAuditingWebsite\\AMCAAuditing\\Views\\AccountingBookkeepingService\\CryptoAccounting.cshtml",
+              "DocumentMoniker": "C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\AMCAAuditing\\Views\\AccountingBookkeepingService\\CryptoAccounting.cshtml",
               "RelativeDocumentMoniker": "AMCAAuditing\\Views\\AccountingBookkeepingService\\CryptoAccounting.cshtml",
-              "ToolTip": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAuditingWebsite\\AMCAAuditing\\Views\\AccountingBookkeepingService\\CryptoAccounting.cshtml",
+              "ToolTip": "C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\AMCAAuditing\\Views\\AccountingBookkeepingService\\CryptoAccounting.cshtml",
               "RelativeToolTip": "AMCAAuditing\\Views\\AccountingBookkeepingService\\CryptoAccounting.cshtml",
               "ViewState": "AgIAAEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -96,11 +153,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PagesController.cs",
-              "DocumentMoniker": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAuditingWebsite\\AMCAAuditing\\Controllers\\PagesController.cs",
+              "DocumentMoniker": "C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\AMCAAuditing\\Controllers\\PagesController.cs",
               "RelativeDocumentMoniker": "AMCAAuditing\\Controllers\\PagesController.cs",
-              "ToolTip": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAuditingWebsite\\AMCAAuditing\\Controllers\\PagesController.cs",
+              "ToolTip": "C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\AMCAAuditing\\Controllers\\PagesController.cs",
               "RelativeToolTip": "AMCAAuditing\\Controllers\\PagesController.cs",
               "ViewState": "AQIAAP0AAAAAAAAAAAAuwBQBAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -108,11 +165,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ListAllJobs.cshtml",
-              "DocumentMoniker": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAuditingWebsite\\AMCAAuditing\\Views\\Career\\ListAllJobs.cshtml",
+              "DocumentMoniker": "C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\AMCAAuditing\\Views\\Career\\ListAllJobs.cshtml",
               "RelativeDocumentMoniker": "AMCAAuditing\\Views\\Career\\ListAllJobs.cshtml",
-              "ToolTip": "D:\\Mohd Owais Ansari\\Git Websites\\AmcaAuditingWebsite\\AMCAAuditing\\Views\\Career\\ListAllJobs.cshtml",
+              "ToolTip": "C:\\ARIF\\F\\AMCA\\GIT Website\\AmcaAuditingWebsite\\AMCAAuditing\\Views\\Career\\ListAllJobs.cshtml",
               "RelativeToolTip": "AMCAAuditing\\Views\\Career\\ListAllJobs.cshtml",
               "ViewState": "AQIAADYAAAAAAAAAAAAAAFgAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002242|",

@@ -730,6 +730,6 @@ C:\ARIF\F\AMCA\GIT Website\AmcaAuditingWebsite\AMCAAuditing\bin\Antlr3.Runtime.p
 C:\ARIF\F\AMCA\GIT Website\AmcaAuditingWebsite\AMCAAuditing\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\ARIF\F\AMCA\GIT Website\AmcaAuditingWebsite\AMCAAuditing\obj\Debug\AMCAAuditing.csproj.AssemblyReference.cache
 C:\ARIF\F\AMCA\GIT Website\AmcaAuditingWebsite\AMCAAuditing\obj\Debug\AMCAAuditing.csproj.CoreCompileInputs.cache
-C:\ARIF\F\AMCA\GIT Website\AmcaAuditingWebsite\AMCAAuditing\obj\Debug\AMCAAuditing.csproj.CopyComplete
 C:\ARIF\F\AMCA\GIT Website\AmcaAuditingWebsite\AMCAAuditing\obj\Debug\AMCAAuditing.dll
 C:\ARIF\F\AMCA\GIT Website\AmcaAuditingWebsite\AMCAAuditing\obj\Debug\AMCAAuditing.pdb
+C:\ARIF\F\AMCA\GIT Website\AmcaAuditingWebsite\AMCAAuditing\obj\Debug\AMCAAudi.330DAFC2.Up2Date
