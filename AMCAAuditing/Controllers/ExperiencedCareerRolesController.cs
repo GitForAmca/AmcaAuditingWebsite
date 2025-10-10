@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using CaptchaMvc.HtmlHelpers;
 using System.Net;
+using System.Web.UI.WebControls;
 
 namespace AMCAAuditing.Controllers
 {
@@ -138,6 +139,27 @@ namespace AMCAAuditing.Controllers
             return PL.dt;
         }
 
+
+        public string FileUpload(HttpPostedFileBase Ctrfile)
+        {
+            var FTPURL = "ftp://amca.ae@45.11.162.90/httpdocs/";
+            string _FileName = Path.GetFileNameWithoutExtension(Ctrfile.FileName);
+            string extension = Path.GetExtension(Ctrfile.FileName);
+            _FileName = _FileName + DateTime.Now.ToString("yymmddssfff") + extension;
+            string strfilePath = "CandidateCV/" + _FileName;
+
+            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTPURL + "CandidateCV/" + _FileName);
+            request.Method = WebRequestMethods.Ftp.UploadFile;
+            request.Credentials = new NetworkCredential("amca.ae", "*(&#hdsj^%^23JKN6512");
+
+            using (Stream requestStream = request.GetRequestStream())
+            using (Stream fileStream = Ctrfile.InputStream)
+            {
+                fileStream.CopyTo(requestStream);
+            }
+            return strfilePath;
+        }
+
         [HttpPost]
         public ActionResult RequestJob(string AboutJob, string JobPosition,string JobTitle, string CandidateName, string EmailId, string MobileNo,
             string Nationality, string DoB, string Gender, string MaritalStatus, string Experience, string UAEExperience,
@@ -146,42 +168,7 @@ namespace AMCAAuditing.Controllers
             HttpPostedFileBase coverLetterFile, string HighestQualification)
         {
             if (this.IsCaptchaValid(errorText: ""))
-            {
-                var FTPURL = "ftp://amca.ae@45.66.245.92/httpdocs/";
-                string _FileName = Path.GetFileNameWithoutExtension(PostedFile.FileName);
-                string extension = Path.GetExtension(PostedFile.FileName);
-                _FileName = _FileName + DateTime.Now.ToString("yymmddssfff") + extension;
-                string relativeFileName = "CandidateCV/" + _FileName;
-
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTPURL + "CandidateCV/" + _FileName);
-                request.Method = WebRequestMethods.Ftp.UploadFile;
-                request.Credentials = new NetworkCredential("amca.ae", "*(&#hdsj^%^23JKN6512");
-
-                using (Stream requestStream = request.GetRequestStream())
-                {
-                    PostedFile.InputStream.CopyTo(requestStream);
-                }
-                string CoverrelativeFileName = "";
-                if (coverLetterFile != null)
-                {
-                    if (coverLetterFile.ContentLength > 0)
-                    {
-                        string _CoverFileName = Path.GetFileNameWithoutExtension(coverLetterFile.FileName);
-                        string Coverextension = Path.GetExtension(coverLetterFile.FileName);
-                        _CoverFileName = _CoverFileName + DateTime.Now.ToString("yymmddssfff") + Coverextension;
-                        CoverrelativeFileName = "CandidateCV/CoverLetter/" + _CoverFileName;
-
-                        FtpWebRequest request2 = (FtpWebRequest)WebRequest.Create(FTPURL + "CandidateCV/CoverLetter/" + _CoverFileName);
-                        request2.Method = WebRequestMethods.Ftp.UploadFile;
-                        request2.Credentials = new NetworkCredential("amca.ae", "*(&#hdsj^%^23JKN6512");
-
-                        using (Stream requestStream = request2.GetRequestStream())
-                        {
-                            coverLetterFile.InputStream.CopyTo(requestStream);
-                        }
-                    }
-                }
-
+            { 
                 Candidate_Data_PL PL = new Candidate_Data_PL();
                 PL.OpCode = 1;
                 PL.AboutJob = AboutJob;
@@ -201,11 +188,13 @@ namespace AMCAAuditing.Controllers
                 PL.SalaryExpectation = SalaryExpectation;
                 PL.NoticePeriod = NoticePeriod;
                 PL.VisaType = VisaType;
-                PL.CV = relativeFileName;
+                //PL.CV = relativeFileName;
+                PL.CV = FileUpload(PostedFile);
                 PL.CountryCode = CountryCodeContact;
                 PL.LastSalary = LastSalaryDrawn;
                 PL.coverLetter = coverLetter;
-                PL.coverLetterFile = CoverrelativeFileName;
+                // PL.coverLetterFile = CoverrelativeFileName;
+                PL.coverLetterFile = FileUpload(coverLetterFile); 
                 PL.HighestQualification = HighestQualification;
                 Candidate_Data_DL.returnTable(PL);
                 if (PL.dt.Rows.Count > 0)
