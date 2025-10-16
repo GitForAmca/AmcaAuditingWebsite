@@ -137,28 +137,42 @@ namespace AMCAAuditing.Controllers
             PL.AutoId = companyid;
             ServiceModelD.returnTable(PL);
             return PL.dt;
-        }
-
-
+        } 
+       
         public string FileUpload(HttpPostedFileBase Ctrfile)
         {
-            var FTPURL = "ftp://amca.ae@45.11.162.90/httpdocs/";
-            string _FileName = Path.GetFileNameWithoutExtension(Ctrfile.FileName);
-            string extension = Path.GetExtension(Ctrfile.FileName);
-            _FileName = _FileName + DateTime.Now.ToString("yymmddssfff") + extension;
-            string strfilePath = "CandidateCV/" + _FileName;
-
-            FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTPURL + "CandidateCV/" + _FileName);
-            request.Method = WebRequestMethods.Ftp.UploadFile;
-            request.Credentials = new NetworkCredential("amca.ae", "*(&#hdsj^%^23JKN6512");
-
-            using (Stream requestStream = request.GetRequestStream())
-            using (Stream fileStream = Ctrfile.InputStream)
+            
+            if (Ctrfile == null || string.IsNullOrEmpty(Ctrfile.FileName))
+                return string.Empty; 
+            try
             {
-                fileStream.CopyTo(requestStream);
+                string FTPURL = "ftp://amca.ae@45.11.162.90/httpdocs/";
+                string fileNameWithoutExt = Path.GetFileNameWithoutExtension(Ctrfile.FileName);
+                string extension = Path.GetExtension(Ctrfile.FileName);
+
+                // Generate a unique filename
+                string uniqueFileName = $"{fileNameWithoutExt}_{DateTime.Now:yyMMddHHmmssfff}{extension}";
+                string strfilePath = $"CandidateCV/{uniqueFileName}";
+
+                // Create FTP request
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(FTPURL + strfilePath);
+                request.Method = WebRequestMethods.Ftp.UploadFile;
+                request.Credentials = new NetworkCredential("amca.ae", "*(&#hdsj^%^23JKN6512");
+
+                using (Stream requestStream = request.GetRequestStream())
+                using (Stream fileStream = Ctrfile.InputStream)
+                {
+                    fileStream.CopyTo(requestStream);
+                }
+
+                return strfilePath;
             }
-            return strfilePath;
+            catch (Exception ex)
+            { 
+                return string.Empty;
+            }
         }
+
 
         [HttpPost]
         public ActionResult RequestJob(string AboutJob, string JobPosition,string JobTitle, string CandidateName, string EmailId, string MobileNo,
