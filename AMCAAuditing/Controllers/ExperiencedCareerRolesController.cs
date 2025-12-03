@@ -229,7 +229,7 @@ namespace AMCAAuditing.Controllers
 
                     //Sending Mail
                     var mail = "<p>Dear HR,</p>";
-                    mail += "<p>Please go thru the link: <a href='https://portal.amca.ae'>AMCA Portal</a> and find the below candidate details.</p>";
+                    mail += "<p>Please go thru the link: <a href='https://portal.jolaha.com'>AMCA Portal</a> and find the below candidate details.</p>";
 
                     mail += "Candidate Id: " + PL.dt.Rows[0]["CandidateId"].ToString();
                     mail += "<br>Candidate Name: " + PL.dt.Rows[0]["CandidateName"].ToString();
